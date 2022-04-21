@@ -1,0 +1,8 @@
+1|email1|password1|admin
+2|email2|password2|patient
+3|email3|password3|patient
+4|email4|password4|doctor
+5|email5|password5|doctor
+6|email6|password6|patient
+7|email7|password7|secretary
+8|email8|password8|patient
