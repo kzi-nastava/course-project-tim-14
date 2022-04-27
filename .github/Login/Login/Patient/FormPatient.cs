@@ -12,9 +12,17 @@ namespace Login
 {
     public partial class FormPatient : Form
     {
-        public FormPatient()
+        readonly Patient currentPatient;
+        readonly CheckupRepository checkupRepository = new CheckupRepository();
+
+        public FormPatient(string email)
         {
             InitializeComponent();
+            PatientRepository patientRepository = new PatientRepository();
+            patientRepository.LoadPatients("patients.txt");
+            checkupRepository.LoadCheckups("checkups.txt");
+            currentPatient = patientRepository.FindPatient(email);
+            
         }
 
         private void checkupCRUD_btn_Click(object sender, EventArgs e)
@@ -24,22 +32,22 @@ namespace Login
                 {
                     case 0:
                         this.Hide();
-                        FormReadCheckups checkups = new FormReadCheckups();
-                        checkups.Show();
+                        FormReadCheckups checkupRead = new FormReadCheckups(currentPatient.id, checkupRepository);
+                        checkupRead.Show();
                         break;
                     case 1:
                         this.Hide();
-                        FormCreateCheckup checkupCreate = new FormCreateCheckup();
+                        FormCreateCheckup checkupCreate = new FormCreateCheckup(currentPatient.id, checkupRepository);
                         checkupCreate.Show();
                         break;
                     case 2:
                         this.Hide();
-                        FormDeleteCheckup checkupDelete = new FormDeleteCheckup();
+                        FormDeleteCheckup checkupDelete = new FormDeleteCheckup(currentPatient.id, checkupRepository);
                         checkupDelete.Show();
                         break;
                     case 3:
                         this.Hide();
-                        FormUpdateCheckup checkupUpdate = new FormUpdateCheckup();
+                        FormUpdateCheckup checkupUpdate = new FormUpdateCheckup(currentPatient.id, checkupRepository);
                         checkupUpdate.Show();
                         break;
                 }

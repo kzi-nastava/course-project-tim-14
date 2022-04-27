@@ -96,6 +96,7 @@ namespace Login
             this.create_checkup.TabIndex = 6;
             this.create_checkup.Text = "Zakazi";
             this.create_checkup.UseVisualStyleBackColor = true;
+            this.create_checkup.Click += new System.EventHandler(this.create_checkup_Click);
             // 
             // FormCreateCheckup
             // 
@@ -111,6 +112,7 @@ namespace Login
             this.Controls.Add(this.checkup_date);
             this.Name = "FormCreateCheckup";
             this.Text = "FormCreateCheckup";
+            this.Load += new System.EventHandler(this.FormCreateCheckup_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
