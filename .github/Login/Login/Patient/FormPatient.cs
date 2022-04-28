@@ -14,14 +14,17 @@ namespace Login
     {
         readonly Patient currentPatient;
         readonly CheckupRepository checkupRepository = new CheckupRepository();
+        public DeleteUpdateRequestRepository requestRepository = new DeleteUpdateRequestRepository();
 
         public FormPatient(string email)
         {
+            
             InitializeComponent();
             PatientRepository patientRepository = new PatientRepository();
             patientRepository.LoadPatients("patients.txt");
             patientRepository.LoadAntitrolls("history.txt");
             checkupRepository.LoadCheckups("checkups.txt");
+            requestRepository.LoadRequests("deleteUpdateRequests.txt");
             currentPatient = patientRepository.FindPatient(email);
             if (currentPatient.IsBlocked())
             {
@@ -47,12 +50,12 @@ namespace Login
                         break;
                     case 2:
                         this.Hide();
-                        FormDeleteCheckup checkupDelete = new FormDeleteCheckup(currentPatient, checkupRepository);
+                        FormDeleteCheckup checkupDelete = new FormDeleteCheckup(currentPatient, checkupRepository, requestRepository);
                         checkupDelete.Show();
                         break;
                     case 3:
                         this.Hide();
-                        FormUpdateCheckup checkupUpdate = new FormUpdateCheckup(currentPatient, checkupRepository);
+                        FormUpdateCheckup checkupUpdate = new FormUpdateCheckup(currentPatient, checkupRepository, requestRepository);
                         checkupUpdate.Show();
                         break;
                 }

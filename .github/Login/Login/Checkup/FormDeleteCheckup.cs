@@ -14,17 +14,19 @@ namespace Login
     {
         readonly CheckupRepository checkupRepository;
         readonly Patient currentPatient;
+        readonly DeleteUpdateRequestRepository requestRepository;
 
-        public FormDeleteCheckup(Patient patient, CheckupRepository ckpRepository)
+        public FormDeleteCheckup(Patient patient, CheckupRepository ckpRepository, DeleteUpdateRequestRepository rqstRepository)
         {
             InitializeComponent();
             currentPatient = patient;
             checkupRepository = ckpRepository;
+            requestRepository = rqstRepository;
         }
 
         private void delete_btn_Click(object sender, EventArgs e)
         {
-            string message = checkupRepository.DeleteCheckup(delete_cb.SelectedItem.ToString());
+            string message = checkupRepository.DeleteCheckup(delete_cb.SelectedItem.ToString(),currentPatient,requestRepository);
             MessageBox.Show(message);
             if(message.Equals("Otkazali ste pregled."))
                 currentPatient.AddToHistory(DateTime.Today, "delete");

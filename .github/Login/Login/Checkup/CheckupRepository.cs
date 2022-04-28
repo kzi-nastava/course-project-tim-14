@@ -71,25 +71,32 @@ namespace Login
             return newCheckup;
         }
 
-        public string DeleteCheckup(string id)
+        public string DeleteCheckup(string id, Patient patient,DeleteUpdateRequestRepository requestRepository)
         {
             int chosenId = int.Parse(id);
             Checkup checkup = FindCheckup(chosenId);
-            if (checkup.dateTime.Date > DateTime.Today.AddDays(1))
+            if (checkup.dateTime.Date > DateTime.Today.AddDays(2))
             {
                 checkups.Remove(checkup);
                 RemoveCheckupFromFile(checkup);
                 return "Otkazali ste pregled.";
             }
+
             else
-                return "Previse je kasno.";
+            {
+                DeleteUpdateRequest request = new DeleteUpdateRequest(requestRepository.GetNewId(),patient.email,checkup.id, "0","delete","false");
+                requestRepository.requests.Add(request);
+                requestRepository.AddRequestToFile(request);
+                return "Poslat je zahtev za brisanje.";
+            }
+                
         }
 
-        public string UpdateCheckup(string id,string time)
+        public string UpdateCheckup(string id,string time, Patient patient, DeleteUpdateRequestRepository requestRepository)
         {
             int chosenId = int.Parse(id);
             Checkup checkup = FindCheckup(chosenId);
-            if (checkup.dateTime.Date > DateTime.Today.AddDays(1))
+            if (checkup.dateTime.Date > DateTime.Today.AddDays(2))
             {
                 int listId = -1;
                 foreach(Checkup element in checkups)
@@ -105,7 +112,12 @@ namespace Login
                 return "Izmenili ste pregled.";
             }
             else
-                return "Previse je kasno.";
+            {
+                DeleteUpdateRequest request = new DeleteUpdateRequest(requestRepository.GetNewId(), patient.email, checkup.id, time, "update", "false");
+                requestRepository.requests.Add(request);
+                requestRepository.AddRequestToFile(request);
+                return "Poslat je zahtev za izmenu.";
+            }
         }
 
         public void AddCheckupToFile(Checkup checkup)

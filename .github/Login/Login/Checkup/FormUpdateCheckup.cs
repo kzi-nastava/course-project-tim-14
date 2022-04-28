@@ -14,18 +14,20 @@ namespace Login
     {
         readonly CheckupRepository checkupRepository;
         readonly Patient currentPatient;
+        readonly DeleteUpdateRequestRepository requestRepository;
 
-        public FormUpdateCheckup(Patient patient, CheckupRepository ckpRepository)
+        public FormUpdateCheckup(Patient patient, CheckupRepository ckpRepository, DeleteUpdateRequestRepository rqstRepository)
         {
             InitializeComponent();
             currentPatient = patient;
             checkupRepository = ckpRepository;
+            requestRepository = rqstRepository;
         }
 
 
         private void update_btn_Click(object sender, EventArgs e)
         {
-            string message = checkupRepository.UpdateCheckup(update_cb.Text, time_cb.SelectedItem.ToString());
+            string message = checkupRepository.UpdateCheckup(update_cb.Text, time_cb.SelectedItem.ToString(),currentPatient,requestRepository);
             MessageBox.Show(message);
             if(message.Equals("Izmenili ste pregled."))
                 currentPatient.AddToHistory(DateTime.Today, "update");
