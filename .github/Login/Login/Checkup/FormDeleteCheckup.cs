@@ -13,12 +13,12 @@ namespace Login
     public partial class FormDeleteCheckup : Form
     {
         readonly CheckupRepository checkupRepository;
-        readonly int patientId;
+        readonly Patient currentPatient;
 
-        public FormDeleteCheckup(int patient, CheckupRepository ckpRepository)
+        public FormDeleteCheckup(Patient patient, CheckupRepository ckpRepository)
         {
             InitializeComponent();
-            patientId = patient;
+            currentPatient = patient;
             checkupRepository = ckpRepository;
         }
 
@@ -26,13 +26,20 @@ namespace Login
         {
             string message = checkupRepository.DeleteCheckup(delete_cb.SelectedItem.ToString());
             MessageBox.Show(message);
+            if(message.Equals("Otkazali ste pregled."))
+                currentPatient.AddToHistory(DateTime.Today, "delete");
+            if (currentPatient.IsBlocked())
+            {
+                MessageBox.Show("Blokirani ste.");
+                Application.Exit();
+            }
         }
 
         private void FormDeleteCheckup_Load(object sender, EventArgs e)
         {
             foreach(Checkup checkup in checkupRepository.checkups)
             {
-                if(int.Parse(checkup.patient)==patientId)
+                if(int.Parse(checkup.patient)==currentPatient.id)
                     delete_cb.Items.Add(checkup.id);
             }
         }

@@ -33,6 +33,34 @@ namespace Login
             }
             return null;
         }
+
+        public Patient FindPatient(int id)
+        {
+            foreach (Patient patient in patients)
+            {
+                if (patient.id==id)
+                {
+                    return patient;
+                }
+            }
+            return null;
+        }
+
+        public void LoadAntitrolls(string fileName)
+        {
+            string[] lines = File.ReadAllLines(fileName);
+
+            foreach (string line in lines)
+            {
+                string[] data = line.Split('|');
+                Patient patient = FindPatient(int.Parse(data[0]));
+                DateTime actionDate = Convert.ToDateTime(data[1]);
+                if(DateTime.Today<=actionDate.AddDays(30))
+                    patient.antitroll.AddAction(data[2]);
+            }
+        }
+
+        
     }
 }
 

@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Antitroll.cs" />
+    <Compile Include="AntitrollRepository.cs" />
     <Compile Include="Checkup\Checkup.cs" />
     <Compile Include="Checkup\CheckupRepository.cs" />
     <Compile Include="Form1.cs">

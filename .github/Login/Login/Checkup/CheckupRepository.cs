@@ -10,7 +10,6 @@ namespace Login
     public class CheckupRepository
     {
         public List<Checkup> checkups = new List<Checkup>();
-        public PatientRepository patientManager = new PatientRepository();
 
         public void LoadCheckups(string fileName)
         {

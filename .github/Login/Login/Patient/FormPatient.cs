@@ -20,9 +20,14 @@ namespace Login
             InitializeComponent();
             PatientRepository patientRepository = new PatientRepository();
             patientRepository.LoadPatients("patients.txt");
+            patientRepository.LoadAntitrolls("history.txt");
             checkupRepository.LoadCheckups("checkups.txt");
             currentPatient = patientRepository.FindPatient(email);
-            
+            if (currentPatient.IsBlocked())
+            {
+                MessageBox.Show("Blokirani ste.");
+                Application.Exit();
+            }
         }
 
         private void checkupCRUD_btn_Click(object sender, EventArgs e)
@@ -37,17 +42,17 @@ namespace Login
                         break;
                     case 1:
                         this.Hide();
-                        FormCreateCheckup checkupCreate = new FormCreateCheckup(currentPatient.id, checkupRepository);
+                        FormCreateCheckup checkupCreate = new FormCreateCheckup(currentPatient, checkupRepository);
                         checkupCreate.Show();
                         break;
                     case 2:
                         this.Hide();
-                        FormDeleteCheckup checkupDelete = new FormDeleteCheckup(currentPatient.id, checkupRepository);
+                        FormDeleteCheckup checkupDelete = new FormDeleteCheckup(currentPatient, checkupRepository);
                         checkupDelete.Show();
                         break;
                     case 3:
                         this.Hide();
-                        FormUpdateCheckup checkupUpdate = new FormUpdateCheckup(currentPatient.id, checkupRepository);
+                        FormUpdateCheckup checkupUpdate = new FormUpdateCheckup(currentPatient, checkupRepository);
                         checkupUpdate.Show();
                         break;
                 }

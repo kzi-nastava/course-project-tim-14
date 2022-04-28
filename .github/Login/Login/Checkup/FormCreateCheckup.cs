@@ -13,12 +13,12 @@ namespace Login
     public partial class FormCreateCheckup : Form
     {
         readonly CheckupRepository checkupRepository;
-        readonly int patientId;
+        readonly Patient currentPatient;
 
-        public FormCreateCheckup(int patient, CheckupRepository ckpRepository)
+        public FormCreateCheckup(Patient patient, CheckupRepository ckpRepository)
         {
             InitializeComponent();
-            patientId = patient;
+            currentPatient = patient;
             checkupRepository = ckpRepository;
         }
 
@@ -55,13 +55,20 @@ namespace Login
         {
             if (IsDateValid() && time_cb.SelectedIndex != -1 && doctor_cb.SelectedIndex != -1)
             {
-                Checkup newCheckup = new Checkup(GetNewCheckupId(), patientId.ToString(), GetCheckupDateTime(), doctor_cb.SelectedItem.ToString());
+                Checkup newCheckup = new Checkup(GetNewCheckupId(), currentPatient.id.ToString(), GetCheckupDateTime(), doctor_cb.SelectedItem.ToString());
                 checkupRepository.checkups.Add(newCheckup);
                 checkupRepository.AddCheckupToFile(newCheckup);
+                currentPatient.antitroll.AddAction("add");
+                currentPatient.AddToHistory(DateTime.Today, "add");
                 MessageBox.Show("Pregled je zakazan.");
             }
             else
                 MessageBox.Show("Doslo je do greske!");
+            if (currentPatient.IsBlocked())
+            {
+                MessageBox.Show("Blokirani ste.");
+                Application.Exit();
+            }
         }
 
         private bool IsDateValid()
