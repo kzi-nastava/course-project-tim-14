@@ -64,7 +64,7 @@ namespace Login
             }
             else
                 MessageBox.Show("Doslo je do greske!");
-            if (currentPatient.IsBlocked())
+            if (currentPatient.IsBlockedBySystem())
             {
                 MessageBox.Show("Blokirani ste.");
                 Application.Exit();

@@ -31,7 +31,7 @@ namespace Login
             MessageBox.Show(message);
             if(message.Equals("Izmenili ste pregled."))
                 currentPatient.AddToHistory(DateTime.Today, "update");
-            if (currentPatient.IsBlocked())
+            if (currentPatient.IsBlockedBySystem())
             {
                 MessageBox.Show("Blokirani ste.");
                 Application.Exit();

@@ -18,7 +18,7 @@ namespace Login
             foreach (string line in lines)
             {
                 string[] data = line.Split('|');
-                Patient patient = new Patient(Int32.Parse(data[0]), data[1], data[2], data[3], data[4]);
+                Patient patient = new Patient(Int32.Parse(data[0]), data[1], data[2], data[3], data[4],data[5]);
                 patients.Add(patient);
             }
         }

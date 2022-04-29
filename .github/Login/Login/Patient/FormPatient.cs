@@ -26,7 +26,7 @@ namespace Login
             checkupRepository.LoadCheckups("checkups.txt");
             requestRepository.LoadRequests("deleteUpdateRequests.txt");
             currentPatient = patientRepository.FindPatient(email);
-            if (currentPatient.IsBlocked())
+            if (currentPatient.IsBlockedBySystem() || currentPatient.blocked.Equals("blocked"))
             {
                 MessageBox.Show("Blokirani ste.");
                 Application.Exit();

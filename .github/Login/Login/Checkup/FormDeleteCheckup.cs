@@ -30,7 +30,7 @@ namespace Login
             MessageBox.Show(message);
             if(message.Equals("Otkazali ste pregled."))
                 currentPatient.AddToHistory(DateTime.Today, "delete");
-            if (currentPatient.IsBlocked())
+            if (currentPatient.IsBlockedBySystem())
             {
                 MessageBox.Show("Blokirani ste.");
                 Application.Exit();
