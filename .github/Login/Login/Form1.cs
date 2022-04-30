@@ -24,15 +24,14 @@ namespace Login
 
         private void login_btn_Click(object sender, EventArgs e)
         {
-            string userType = findUser(email_tb.Text, password_tb.Text);
+            string userType = FindUser(email_tb.Text, password_tb.Text);
             if (!(userType is null))
             {
-                openUserForm(userType);
-
+                OpenUserForm(userType);
             }
         }
 
-        public string findUser(string email, string password)
+        public string FindUser(string email, string password)
         {
             string userFileName = "users.txt";
             string[] lines = File.ReadAllLines(userFileName);
@@ -44,7 +43,7 @@ namespace Login
             return null;
         }
 
-        public void openUserForm(string userType)
+        public void OpenUserForm(string userType)
         {
             switch (userType)
             {
@@ -57,7 +56,7 @@ namespace Login
                     secretaryForm.Show();
                     break;
                 case "patient":
-                    var patientForm = new FormPatient();
+                    var patientForm = new FormPatient(email_tb.Text);
                     patientForm.Show();
                     break;
                 case "doctor":

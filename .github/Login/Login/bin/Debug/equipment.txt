@@ -1,0 +1,4 @@
+1|RoomEquipment|Bed|Bed1|BreakRoom|2
+2|RoomEquipment|Table|Table1|BreakRoom|4
+3|RoomEquipment|Bed|Bed2|Warehouse|0
+4|OperatingEquipment|OperatingTable|Table1|OperatingRoom|1

@@ -46,6 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Request\DeleteUpdateRequest.cs" />
+    <Compile Include="Request\DeleteUpdateRequestRepository.cs" />
+    <Compile Include="Patient\Antitroll.cs" />
+    <Compile Include="Checkup\Checkup.cs" />
+    <Compile Include="Checkup\CheckupRepository.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,16 +63,16 @@
     <Compile Include="FormAdmin.Designer.cs">
       <DependentUpon>FormAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCreateCheckup.cs">
+    <Compile Include="Checkup\FormCreateCheckup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCreateCheckup.Designer.cs">
+    <Compile Include="Checkup\FormCreateCheckup.Designer.cs">
       <DependentUpon>FormCreateCheckup.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormDeleteCheckup.cs">
+    <Compile Include="Checkup\FormDeleteCheckup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormDeleteCheckup.Designer.cs">
+    <Compile Include="Checkup\FormDeleteCheckup.Designer.cs">
       <DependentUpon>FormDeleteCheckup.cs</DependentUpon>
     </Compile>
     <Compile Include="FormDoctor.cs">
@@ -76,16 +81,16 @@
     <Compile Include="FormDoctor.Designer.cs">
       <DependentUpon>FormDoctor.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormPatient.cs">
+    <Compile Include="Patient\FormPatient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormPatient.Designer.cs">
+    <Compile Include="Patient\FormPatient.Designer.cs">
       <DependentUpon>FormPatient.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormReadCheckups.cs">
+    <Compile Include="Checkup\FormReadCheckups.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormReadCheckups.Designer.cs">
+    <Compile Include="Checkup\FormReadCheckups.Designer.cs">
       <DependentUpon>FormReadCheckups.cs</DependentUpon>
     </Compile>
     <Compile Include="FormSecretary.cs">
@@ -94,88 +99,38 @@
     <Compile Include="FormSecretary.Designer.cs">
       <DependentUpon>FormSecretary.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormUpdateCheckup.cs">
+    <Compile Include="Checkup\FormUpdateCheckup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormUpdateCheckup.Designer.cs">
+    <Compile Include="Checkup\FormUpdateCheckup.Designer.cs">
       <DependentUpon>FormUpdateCheckup.cs</DependentUpon>
     </Compile>
+    <Compile Include="Patient\Patient.cs" />
+    <Compile Include="Patient\PatientRepository.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Secretary\AccountCreationForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Secretary\AccountCreationForm.Designer.cs">
-      <DependentUpon>AccountCreationForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Secretary\AccountDataEditForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Secretary\AccountDataEditForm.Designer.cs">
-      <DependentUpon>AccountDataEditForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Secretary\AccountDeletionForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Secretary\AccountDeletionForm.Designer.cs">
-      <DependentUpon>AccountDeletionForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Secretary\AccountEditForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Secretary\AccountEditForm.Designer.cs">
-      <DependentUpon>AccountEditForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Secretary\AllPatientsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Secretary\AllPatientsForm.Designer.cs">
-      <DependentUpon>AllPatientsForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Secretary\Antitroll.cs" />
-    <Compile Include="Secretary\BlockedAccountsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Secretary\BlockedAccountsForm.Designer.cs">
-      <DependentUpon>BlockedAccountsForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Secretary\ChooseAccountForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Secretary\ChooseAccountForm.Designer.cs">
-      <DependentUpon>ChooseAccountForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Secretary\Patient.cs" />
-    <Compile Include="Secretary\PatientCard.cs" />
-    <Compile Include="Secretary\PatientRepository.cs" />
-    <Compile Include="Secretary\RequestsCheckForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Secretary\RequestsCheckForm.Designer.cs">
-      <DependentUpon>RequestsCheckForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Secretary\SingleAccountForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Secretary\SingleAccountForm.Designer.cs">
-      <DependentUpon>SingleAccountForm.cs</DependentUpon>
-    </Compile>
+    <EmbeddedResource Include="Checkup\FormDeleteCheckup.resx">
+      <DependentUpon>FormDeleteCheckup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Checkup\FormUpdateCheckup.resx">
+      <DependentUpon>FormUpdateCheckup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormAdmin.resx">
       <DependentUpon>FormAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCreateCheckup.resx">
+    <EmbeddedResource Include="Checkup\FormCreateCheckup.resx">
       <DependentUpon>FormCreateCheckup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDoctor.resx">
       <DependentUpon>FormDoctor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormPatient.resx">
+    <EmbeddedResource Include="Patient\FormPatient.resx">
       <DependentUpon>FormPatient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormReadCheckups.resx">
+    <EmbeddedResource Include="Checkup\FormReadCheckups.resx">
       <DependentUpon>FormReadCheckups.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSecretary.resx">
@@ -190,33 +145,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Secretary\AccountCreationForm.resx">
-      <DependentUpon>AccountCreationForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Secretary\AccountDataEditForm.resx">
-      <DependentUpon>AccountDataEditForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Secretary\AccountDeletionForm.resx">
-      <DependentUpon>AccountDeletionForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Secretary\AccountEditForm.resx">
-      <DependentUpon>AccountEditForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Secretary\AllPatientsForm.resx">
-      <DependentUpon>AllPatientsForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Secretary\BlockedAccountsForm.resx">
-      <DependentUpon>BlockedAccountsForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Secretary\ChooseAccountForm.resx">
-      <DependentUpon>ChooseAccountForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Secretary\RequestsCheckForm.resx">
-      <DependentUpon>RequestsCheckForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Secretary\SingleAccountForm.resx">
-      <DependentUpon>SingleAccountForm.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
