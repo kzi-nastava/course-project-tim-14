@@ -37,10 +37,5 @@ namespace Login.Secretary
             string patientsFilePath = "patients.txt";
             FillRichText(patientsFilePath);
         }
-
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

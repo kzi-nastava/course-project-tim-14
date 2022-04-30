@@ -25,9 +25,9 @@ namespace Login.Secretary
 
         private void done_btn_Click(object sender, EventArgs e)
         {
-            string usersFilePath = @"C:\Users\Milenko\Desktop\Everything\Faks shit ass\Uvod u softversko\Vezbe 4\course-project-tim-14\.github\Login\Login\bin\Debug\users.txt";
-            string patientsFilePath = @"C:\Users\Milenko\Desktop\Everything\Faks shit ass\Uvod u softversko\Vezbe 4\course-project-tim-14\.github\Login\Login\bin\Debug\patients.txt";
-            string patientCardsFilePath = @"C:\Users\Milenko\Desktop\Everything\Faks shit ass\Uvod u softversko\Vezbe 4\course-project-tim-14\.github\Login\Login\bin\Debug\patientCards.txt";
+            string usersFilePath = "users.txt";
+            string patientsFilePath = "patients.txt";
+            string patientCardsFilePath = "patientCards.txt";
 
             int newCardId = getNewCardId();
             int newPatientId = getNewUserId();
