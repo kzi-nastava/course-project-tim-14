@@ -38,9 +38,10 @@ namespace Login
             // 
             // login_btn
             // 
-            this.login_btn.Location = new System.Drawing.Point(128, 300);
+            this.login_btn.Location = new System.Drawing.Point(114, 240);
+            this.login_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.login_btn.Name = "login_btn";
-            this.login_btn.Size = new System.Drawing.Size(156, 36);
+            this.login_btn.Size = new System.Drawing.Size(139, 29);
             this.login_btn.TabIndex = 0;
             this.login_btn.Text = "login";
             this.login_btn.UseVisualStyleBackColor = true;
@@ -48,24 +49,26 @@ namespace Login
             // 
             // email_tb
             // 
-            this.email_tb.Location = new System.Drawing.Point(128, 123);
+            this.email_tb.Location = new System.Drawing.Point(114, 98);
+            this.email_tb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.email_tb.Name = "email_tb";
-            this.email_tb.Size = new System.Drawing.Size(156, 26);
+            this.email_tb.Size = new System.Drawing.Size(139, 22);
             this.email_tb.TabIndex = 1;
             // 
             // password_tb
             // 
-            this.password_tb.Location = new System.Drawing.Point(128, 178);
+            this.password_tb.Location = new System.Drawing.Point(114, 142);
+            this.password_tb.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.password_tb.Name = "password_tb";
-            this.password_tb.Size = new System.Drawing.Size(156, 26);
+            this.password_tb.Size = new System.Drawing.Size(139, 22);
             this.password_tb.TabIndex = 2;
             // 
             // email
             // 
             this.email.AutoSize = true;
-            this.email.Location = new System.Drawing.Point(128, 97);
+            this.email.Location = new System.Drawing.Point(114, 78);
             this.email.Name = "email";
-            this.email.Size = new System.Drawing.Size(46, 20);
+            this.email.Size = new System.Drawing.Size(41, 17);
             this.email.TabIndex = 3;
             this.email.Text = "email";
             this.email.Click += new System.EventHandler(this.label_Click);
@@ -73,24 +76,26 @@ namespace Login
             // password
             // 
             this.password.AutoSize = true;
-            this.password.Location = new System.Drawing.Point(128, 156);
+            this.password.Location = new System.Drawing.Point(114, 125);
             this.password.Name = "password";
-            this.password.Size = new System.Drawing.Size(77, 20);
+            this.password.Size = new System.Drawing.Size(68, 17);
             this.password.TabIndex = 4;
             this.password.Text = "password";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(397, 372);
+            this.ClientSize = new System.Drawing.Size(353, 298);
             this.Controls.Add(this.password);
             this.Controls.Add(this.email);
             this.Controls.Add(this.password_tb);
             this.Controls.Add(this.email_tb);
             this.Controls.Add(this.login_btn);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

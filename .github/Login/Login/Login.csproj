@@ -102,6 +102,40 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Secretary\AccountCreationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Secretary\AccountCreationForm.Designer.cs">
+      <DependentUpon>AccountCreationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Secretary\AccountDataEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Secretary\AccountDataEditForm.Designer.cs">
+      <DependentUpon>AccountDataEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Secretary\AccountDeletionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Secretary\AccountDeletionForm.Designer.cs">
+      <DependentUpon>AccountDeletionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Secretary\AccountEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Secretary\AccountEditForm.Designer.cs">
+      <DependentUpon>AccountEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Secretary\AllPatientsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Secretary\AllPatientsForm.Designer.cs">
+      <DependentUpon>AllPatientsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Secretary\Antitroll.cs" />
+    <Compile Include="Secretary\Patient.cs" />
+    <Compile Include="Secretary\PatientCard.cs" />
+    <Compile Include="Secretary\PatientRepository.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -132,6 +166,21 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Secretary\AccountCreationForm.resx">
+      <DependentUpon>AccountCreationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Secretary\AccountDataEditForm.resx">
+      <DependentUpon>AccountDataEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Secretary\AccountDeletionForm.resx">
+      <DependentUpon>AccountDeletionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Secretary\AccountEditForm.resx">
+      <DependentUpon>AccountEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Secretary\AllPatientsForm.resx">
+      <DependentUpon>AllPatientsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -8,21 +8,23 @@ namespace Login.Secretary
 {
     class PatientCard
     {
-        public int CardId;
-        public Patient Patient;
-        public int Height;
-        public int Weight;
-        public string[] PreviouseIllnesses;
-        public string[] DoctorNotes;
-    }
+        public int cardId;
+        public Patient patient;
+        public int height;
+        public int weight;
+        public string alergies;
+        public string previousIllnesses;
+        public string doctorNotes;
 
-    public PatientCard(int cardId, PatientCard patient, int height, int weight, string[] previousIllnesses, string[] doctorNotes)
-    {
-        CardId = cardId;
-        Patient = patient;
-        Height = height;
-        Weight = weight;
-        PreviouseIllnesses = previousIllnesses;
-        DoctorNotes = doctorNotes;
+        public PatientCard(int cardId, Patient patient, int height, int weight, string alergies, string previousIllnesses, string doctorNotes)
+        {
+            this.cardId = cardId;
+            this.patient = patient;
+            this.height = height;
+            this.weight = weight;
+            this.alergies = alergies;
+            this.previousIllnesses = previousIllnesses;
+            this.doctorNotes = doctorNotes;
+        }
     }
 }
