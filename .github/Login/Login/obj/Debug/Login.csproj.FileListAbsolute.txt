@@ -32,3 +32,36 @@ C:\Users\zoric\Documents\GitHub\course-project-tim-14\.github\Login\Login\obj\De
 C:\Users\zoric\Documents\GitHub\course-project-tim-14\.github\Login\Login\obj\Debug\Login.pdb
 C:\Users\zoric\Documents\GitHub\course-project-tim-14\.github\Login\Login\obj\Debug\Login.FormDeleteCheckup.resources
 C:\Users\zoric\Documents\GitHub\course-project-tim-14\.github\Login\Login\obj\Debug\Login.FormUpdateCheckup.resources
+C:\Users\Milenko\Desktop\Everything\Faks shit ass\Uvod u softversko\Vezbe 4\course-project-tim-14\.github\Login\Login\obj\Debug\Login.csproj.AssemblyReference.cache
+C:\Users\Milenko\Desktop\Everything\Faks shit ass\Uvod u softversko\Vezbe 4\course-project-tim-14\.github\Login\Login\obj\Debug\Login.exe
+C:\Users\Milenko\Desktop\Everything\Faks shit ass\Uvod u softversko\Vezbe 4\course-project-tim-14\.github\Login\Login\obj\Debug\Login.pdb
+C:\Users\Milenko\Desktop\Everything\Faks shit ass\Uvod u softversko\Vezbe 4\course-project-tim-14\.github\Login\Login\obj\Debug\Login.FormCreateCheckup.resources
+C:\Users\Milenko\Desktop\Everything\Faks shit ass\Uvod u softversko\Vezbe 4\course-project-tim-14\.github\Login\Login\obj\Debug\Login.FormDeleteCheckup.resources
+C:\Users\Milenko\Desktop\Everything\Faks shit ass\Uvod u softversko\Vezbe 4\course-project-tim-14\.github\Login\Login\obj\Debug\Login.FormReadCheckups.resources
+C:\Users\Milenko\Desktop\Everything\Faks shit ass\Uvod u softversko\Vezbe 4\course-project-tim-14\.github\Login\Login\obj\Debug\Login.FormUpdateCheckup.resources
+C:\Users\Milenko\Desktop\Everything\Faks shit ass\Uvod u softversko\Vezbe 4\course-project-tim-14\.github\Login\Login\obj\Debug\Login.Form1.resources
+C:\Users\Milenko\Desktop\Everything\Faks shit ass\Uvod u softversko\Vezbe 4\course-project-tim-14\.github\Login\Login\obj\Debug\Login.FormAdmin.resources
+C:\Users\Milenko\Desktop\Everything\Faks shit ass\Uvod u softversko\Vezbe 4\course-project-tim-14\.github\Login\Login\obj\Debug\Login.FormDoctor.resources
+C:\Users\Milenko\Desktop\Everything\Faks shit ass\Uvod u softversko\Vezbe 4\course-project-tim-14\.github\Login\Login\obj\Debug\Login.FormSecretary.resources
+C:\Users\Milenko\Desktop\Everything\Faks shit ass\Uvod u softversko\Vezbe 4\course-project-tim-14\.github\Login\Login\obj\Debug\Login.ManagerRepository.GUI.DeleteRoomForm.resources
+C:\Users\Milenko\Desktop\Everything\Faks shit ass\Uvod u softversko\Vezbe 4\course-project-tim-14\.github\Login\Login\obj\Debug\Login.ManagerRepository.GUI.MovingRequestForm.resources
+C:\Users\Milenko\Desktop\Everything\Faks shit ass\Uvod u softversko\Vezbe 4\course-project-tim-14\.github\Login\Login\obj\Debug\Login.Manager.NewRoomForm.resources
+C:\Users\Milenko\Desktop\Everything\Faks shit ass\Uvod u softversko\Vezbe 4\course-project-tim-14\.github\Login\Login\obj\Debug\Login.ManagerRepository.GUI.ShowRoomsForm.resources
+C:\Users\Milenko\Desktop\Everything\Faks shit ass\Uvod u softversko\Vezbe 4\course-project-tim-14\.github\Login\Login\obj\Debug\Login.ManagerRepository.GUI.UpdateRoomForm.resources
+C:\Users\Milenko\Desktop\Everything\Faks shit ass\Uvod u softversko\Vezbe 4\course-project-tim-14\.github\Login\Login\obj\Debug\Login.ManagerRepository.GUI.ViewEquipmentForm.resources
+C:\Users\Milenko\Desktop\Everything\Faks shit ass\Uvod u softversko\Vezbe 4\course-project-tim-14\.github\Login\Login\obj\Debug\Login.FormPatient.resources
+C:\Users\Milenko\Desktop\Everything\Faks shit ass\Uvod u softversko\Vezbe 4\course-project-tim-14\.github\Login\Login\obj\Debug\Login.Properties.Resources.resources
+C:\Users\Milenko\Desktop\Everything\Faks shit ass\Uvod u softversko\Vezbe 4\course-project-tim-14\.github\Login\Login\obj\Debug\Login.Secretary.AccountCreationForm.resources
+C:\Users\Milenko\Desktop\Everything\Faks shit ass\Uvod u softversko\Vezbe 4\course-project-tim-14\.github\Login\Login\obj\Debug\Login.Secretary.AccountDataEditForm.resources
+C:\Users\Milenko\Desktop\Everything\Faks shit ass\Uvod u softversko\Vezbe 4\course-project-tim-14\.github\Login\Login\obj\Debug\Login.Secretary.AccountDeletionForm.resources
+C:\Users\Milenko\Desktop\Everything\Faks shit ass\Uvod u softversko\Vezbe 4\course-project-tim-14\.github\Login\Login\obj\Debug\Login.Secretary.AccountEditForm.resources
+C:\Users\Milenko\Desktop\Everything\Faks shit ass\Uvod u softversko\Vezbe 4\course-project-tim-14\.github\Login\Login\obj\Debug\Login.Secretary.AllPatientsForm.resources
+C:\Users\Milenko\Desktop\Everything\Faks shit ass\Uvod u softversko\Vezbe 4\course-project-tim-14\.github\Login\Login\obj\Debug\Login.Secretary.BlockedAccountsForm.resources
+C:\Users\Milenko\Desktop\Everything\Faks shit ass\Uvod u softversko\Vezbe 4\course-project-tim-14\.github\Login\Login\obj\Debug\Login.Secretary.ChooseAccountForm.resources
+C:\Users\Milenko\Desktop\Everything\Faks shit ass\Uvod u softversko\Vezbe 4\course-project-tim-14\.github\Login\Login\obj\Debug\Login.Secretary.RequestsCheckForm.resources
+C:\Users\Milenko\Desktop\Everything\Faks shit ass\Uvod u softversko\Vezbe 4\course-project-tim-14\.github\Login\Login\obj\Debug\Login.Secretary.SingleAccountForm.resources
+C:\Users\Milenko\Desktop\Everything\Faks shit ass\Uvod u softversko\Vezbe 4\course-project-tim-14\.github\Login\Login\obj\Debug\Login.csproj.GenerateResource.cache
+C:\Users\Milenko\Desktop\Everything\Faks shit ass\Uvod u softversko\Vezbe 4\course-project-tim-14\.github\Login\Login\obj\Debug\Login.csproj.CoreCompileInputs.cache
+C:\Users\Milenko\Desktop\Everything\Faks shit ass\Uvod u softversko\Vezbe 4\course-project-tim-14\.github\Login\Login\bin\Debug\Login.exe.config
+C:\Users\Milenko\Desktop\Everything\Faks shit ass\Uvod u softversko\Vezbe 4\course-project-tim-14\.github\Login\Login\bin\Debug\Login.exe
+C:\Users\Milenko\Desktop\Everything\Faks shit ass\Uvod u softversko\Vezbe 4\course-project-tim-14\.github\Login\Login\bin\Debug\Login.pdb
