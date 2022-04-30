@@ -100,6 +100,49 @@
     <Compile Include="FormUpdateCheckup.Designer.cs">
       <DependentUpon>FormUpdateCheckup.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManagerRepository\Equipment.cs" />
+    <Compile Include="ManagerRepository\EquipmentRepository.cs" />
+    <Compile Include="ManagerRepository\GUI\DeleteRoomForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerRepository\GUI\DeleteRoomForm.Designer.cs">
+      <DependentUpon>DeleteRoomForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerRepository\GUI\MovingRequestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerRepository\GUI\MovingRequestForm.Designer.cs">
+      <DependentUpon>MovingRequestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerRepository\GUI\NewRoomForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerRepository\GUI\NewRoomForm.Designer.cs">
+      <DependentUpon>NewRoomForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerRepository\GUI\ShowRoomsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerRepository\GUI\ShowRoomsForm.Designer.cs">
+      <DependentUpon>ShowRoomsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerRepository\GUI\UpdateRoomForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerRepository\GUI\UpdateRoomForm.Designer.cs">
+      <DependentUpon>UpdateRoomForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerRepository\GUI\ViewEquipmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerRepository\GUI\ViewEquipmentForm.Designer.cs">
+      <DependentUpon>ViewEquipmentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerRepository\MovingRequest.cs" />
+    <Compile Include="ManagerRepository\MovingRequestsRepository.cs" />
+    <Compile Include="ManagerRepository\QuantityCounter.cs" />
+    <Compile Include="ManagerRepository\Room.cs" />
+    <Compile Include="ManagerRepository\RoomsRepository.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -122,6 +165,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormSecretary.resx">
       <DependentUpon>FormSecretary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerRepository\GUI\DeleteRoomForm.resx">
+      <DependentUpon>DeleteRoomForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerRepository\GUI\MovingRequestForm.resx">
+      <DependentUpon>MovingRequestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerRepository\GUI\NewRoomForm.resx">
+      <DependentUpon>NewRoomForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerRepository\GUI\ShowRoomsForm.resx">
+      <DependentUpon>ShowRoomsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerRepository\GUI\UpdateRoomForm.resx">
+      <DependentUpon>UpdateRoomForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerRepository\GUI\ViewEquipmentForm.resx">
+      <DependentUpon>ViewEquipmentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
