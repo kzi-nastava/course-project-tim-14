@@ -50,7 +50,7 @@ namespace Login
             // checkup
             // 
             this.checkup.AutoSize = true;
-            this.checkup.Location = new System.Drawing.Point(264, 27);
+            this.checkup.Location = new System.Drawing.Point(354, 19);
             this.checkup.Name = "checkup";
             this.checkup.Size = new System.Drawing.Size(66, 20);
             this.checkup.TabIndex = 1;

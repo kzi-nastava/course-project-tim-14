@@ -7,6 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Login", "Login\Login.csproj
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F1C760A5-82DE-4518-98A8-9FF2496E0270}"
 	ProjectSection(SolutionItems) = preProject
+		patients.txt = patients.txt
 		users.txt = users.txt
 	EndProjectSection
 EndProject
