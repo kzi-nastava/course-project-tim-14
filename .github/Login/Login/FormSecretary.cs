@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Login.Secretary;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,53 @@ namespace Login
         public FormSecretary()
         {
             InitializeComponent();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void createPatientAccount_btn_Click(object sender, EventArgs e)
+        {
+            var accountCreationForm = new AccountCreationForm();
+            accountCreationForm.Show();
+        }
+
+        private void editPatientAccount_btn_Click(object sender, EventArgs e)
+        {
+            var accountEditForm = new AccountEditForm();
+            accountEditForm.Show();
+        }
+
+        private void deletePatientAccount_btn_Click(object sender, EventArgs e)
+        {
+            var accountDeleteForm = new AccountDeletionForm();
+            accountDeleteForm.Show();
+        }
+
+        private void showPatients_btn_Click(object sender, EventArgs e)
+        {
+            var allPatientsForm = new AllPatientsForm();
+            allPatientsForm.Show();
+        }
+
+        private void viewSingleAccount_btn_Click(object sender, EventArgs e)
+        {
+            var singlePatientForm = new ChooseAccountForm();
+            singlePatientForm.Show();
+        }
+
+        private void showBlockedAccounts_btn_Click(object sender, EventArgs e)
+        {
+            var blockedAccountsForm = new BlockedAccountsForm();
+            blockedAccountsForm.Show();
+        }
+
+        private void requestCheck_btn_Click(object sender, EventArgs e)
+        {
+            var requestCheckForm = new RequestsCheckForm();
+            requestCheckForm.Show();
         }
     }
 }
