@@ -35,6 +35,7 @@ namespace Login
             this.showPatients_btn = new System.Windows.Forms.Button();
             this.viewSingleAccount_btn = new System.Windows.Forms.Button();
             this.showBlockedAccounts_btn = new System.Windows.Forms.Button();
+            this.requestCheck_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // createPatientAccount_btn
@@ -97,11 +98,22 @@ namespace Login
             this.showBlockedAccounts_btn.UseVisualStyleBackColor = true;
             this.showBlockedAccounts_btn.Click += new System.EventHandler(this.showBlockedAccounts_btn_Click);
             // 
+            // requestCheck_btn
+            // 
+            this.requestCheck_btn.Location = new System.Drawing.Point(48, 358);
+            this.requestCheck_btn.Name = "requestCheck_btn";
+            this.requestCheck_btn.Size = new System.Drawing.Size(192, 62);
+            this.requestCheck_btn.TabIndex = 6;
+            this.requestCheck_btn.Text = "Pregled zahteva";
+            this.requestCheck_btn.UseVisualStyleBackColor = true;
+            this.requestCheck_btn.Click += new System.EventHandler(this.requestCheck_btn_Click);
+            // 
             // FormSecretary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(556, 359);
+            this.ClientSize = new System.Drawing.Size(556, 443);
+            this.Controls.Add(this.requestCheck_btn);
             this.Controls.Add(this.showBlockedAccounts_btn);
             this.Controls.Add(this.viewSingleAccount_btn);
             this.Controls.Add(this.showPatients_btn);
@@ -123,5 +135,6 @@ namespace Login
         private System.Windows.Forms.Button showPatients_btn;
         private System.Windows.Forms.Button viewSingleAccount_btn;
         private System.Windows.Forms.Button showBlockedAccounts_btn;
+        private System.Windows.Forms.Button requestCheck_btn;
     }
 }

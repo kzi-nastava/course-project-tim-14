@@ -148,6 +148,12 @@
     <Compile Include="Secretary\Patient.cs" />
     <Compile Include="Secretary\PatientCard.cs" />
     <Compile Include="Secretary\PatientRepository.cs" />
+    <Compile Include="Secretary\RequestsCheckForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Secretary\RequestsCheckForm.Designer.cs">
+      <DependentUpon>RequestsCheckForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Secretary\SingleAccountForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -204,6 +210,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Secretary\ChooseAccountForm.resx">
       <DependentUpon>ChooseAccountForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Secretary\RequestsCheckForm.resx">
+      <DependentUpon>RequestsCheckForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Secretary\SingleAccountForm.resx">
       <DependentUpon>SingleAccountForm.cs</DependentUpon>

@@ -58,5 +58,11 @@ namespace Login
             var blockedAccountsForm = new BlockedAccountsForm();
             blockedAccountsForm.Show();
         }
+
+        private void requestCheck_btn_Click(object sender, EventArgs e)
+        {
+            var requestCheckForm = new RequestsCheckForm();
+            requestCheckForm.Show();
+        }
     }
 }
