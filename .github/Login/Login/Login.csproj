@@ -133,9 +133,27 @@
       <DependentUpon>AllPatientsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Secretary\Antitroll.cs" />
+    <Compile Include="Secretary\BlockedAccountsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Secretary\BlockedAccountsForm.Designer.cs">
+      <DependentUpon>BlockedAccountsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Secretary\ChooseAccountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Secretary\ChooseAccountForm.Designer.cs">
+      <DependentUpon>ChooseAccountForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Secretary\Patient.cs" />
     <Compile Include="Secretary\PatientCard.cs" />
     <Compile Include="Secretary\PatientRepository.cs" />
+    <Compile Include="Secretary\SingleAccountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Secretary\SingleAccountForm.Designer.cs">
+      <DependentUpon>SingleAccountForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -180,6 +198,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Secretary\AllPatientsForm.resx">
       <DependentUpon>AllPatientsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Secretary\BlockedAccountsForm.resx">
+      <DependentUpon>BlockedAccountsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Secretary\ChooseAccountForm.resx">
+      <DependentUpon>ChooseAccountForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Secretary\SingleAccountForm.resx">
+      <DependentUpon>SingleAccountForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

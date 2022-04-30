@@ -34,8 +34,13 @@ namespace Login.Secretary
 
         private void AllPatientsForm_Load(object sender, EventArgs e)
         {
-            string patientsFilePath = @"C:\Users\Milenko\Desktop\Everything\Faks shit ass\Uvod u softversko\Vezbe 4\course-project-tim-14\.github\Login\Login\bin\Debug\patients.txt";
+            string patientsFilePath = "patients.txt";
             FillRichText(patientsFilePath);
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

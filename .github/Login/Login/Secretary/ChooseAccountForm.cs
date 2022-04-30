@@ -10,19 +10,18 @@ using System.Windows.Forms;
 
 namespace Login.Secretary
 {
-    public partial class AccountEditForm : Form
+    public partial class ChooseAccountForm : Form
     {
-        public AccountEditForm()
+        public ChooseAccountForm()
         {
             InitializeComponent();
         }
 
-        private void next_btn_Click(object sender, EventArgs e)
+        private void continue_btn_Click(object sender, EventArgs e)
         {
-            string editedPatientID = patientEditID_tb.Text;
-
-            var accountDataEditForm = new AccountDataEditForm(editedPatientID);
-            accountDataEditForm.Show();
+            string patientId = patientId_tb.Text;
+            var singleAccountForm = new SingleAccountForm(patientId);
+            singleAccountForm.Show();
 
             this.Hide();
         }

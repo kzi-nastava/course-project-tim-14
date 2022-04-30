@@ -33,11 +33,13 @@ namespace Login
             this.editPatientAccount_btn = new System.Windows.Forms.Button();
             this.deletePatientAccount_btn = new System.Windows.Forms.Button();
             this.showPatients_btn = new System.Windows.Forms.Button();
+            this.viewSingleAccount_btn = new System.Windows.Forms.Button();
+            this.showBlockedAccounts_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // createPatientAccount_btn
             // 
-            this.createPatientAccount_btn.Location = new System.Drawing.Point(48, 132);
+            this.createPatientAccount_btn.Location = new System.Drawing.Point(301, 44);
             this.createPatientAccount_btn.Name = "createPatientAccount_btn";
             this.createPatientAccount_btn.Size = new System.Drawing.Size(192, 62);
             this.createPatientAccount_btn.TabIndex = 0;
@@ -47,7 +49,7 @@ namespace Login
             // 
             // editPatientAccount_btn
             // 
-            this.editPatientAccount_btn.Location = new System.Drawing.Point(48, 226);
+            this.editPatientAccount_btn.Location = new System.Drawing.Point(301, 142);
             this.editPatientAccount_btn.Name = "editPatientAccount_btn";
             this.editPatientAccount_btn.Size = new System.Drawing.Size(192, 62);
             this.editPatientAccount_btn.TabIndex = 1;
@@ -57,7 +59,7 @@ namespace Login
             // 
             // deletePatientAccount_btn
             // 
-            this.deletePatientAccount_btn.Location = new System.Drawing.Point(48, 318);
+            this.deletePatientAccount_btn.Location = new System.Drawing.Point(301, 253);
             this.deletePatientAccount_btn.Name = "deletePatientAccount_btn";
             this.deletePatientAccount_btn.Size = new System.Drawing.Size(192, 62);
             this.deletePatientAccount_btn.TabIndex = 2;
@@ -75,11 +77,33 @@ namespace Login
             this.showPatients_btn.UseVisualStyleBackColor = true;
             this.showPatients_btn.Click += new System.EventHandler(this.showPatients_btn_Click);
             // 
+            // viewSingleAccount_btn
+            // 
+            this.viewSingleAccount_btn.Location = new System.Drawing.Point(48, 142);
+            this.viewSingleAccount_btn.Name = "viewSingleAccount_btn";
+            this.viewSingleAccount_btn.Size = new System.Drawing.Size(192, 62);
+            this.viewSingleAccount_btn.TabIndex = 4;
+            this.viewSingleAccount_btn.Text = "Pregled pojedinacnih naloga pacijenata";
+            this.viewSingleAccount_btn.UseVisualStyleBackColor = true;
+            this.viewSingleAccount_btn.Click += new System.EventHandler(this.viewSingleAccount_btn_Click);
+            // 
+            // showBlockedAccounts_btn
+            // 
+            this.showBlockedAccounts_btn.Location = new System.Drawing.Point(48, 253);
+            this.showBlockedAccounts_btn.Name = "showBlockedAccounts_btn";
+            this.showBlockedAccounts_btn.Size = new System.Drawing.Size(192, 62);
+            this.showBlockedAccounts_btn.TabIndex = 5;
+            this.showBlockedAccounts_btn.Text = "Pregled blokiranih naloga";
+            this.showBlockedAccounts_btn.UseVisualStyleBackColor = true;
+            this.showBlockedAccounts_btn.Click += new System.EventHandler(this.showBlockedAccounts_btn_Click);
+            // 
             // FormSecretary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(293, 419);
+            this.ClientSize = new System.Drawing.Size(556, 359);
+            this.Controls.Add(this.showBlockedAccounts_btn);
+            this.Controls.Add(this.viewSingleAccount_btn);
             this.Controls.Add(this.showPatients_btn);
             this.Controls.Add(this.deletePatientAccount_btn);
             this.Controls.Add(this.editPatientAccount_btn);
@@ -97,5 +121,7 @@ namespace Login
         private System.Windows.Forms.Button editPatientAccount_btn;
         private System.Windows.Forms.Button deletePatientAccount_btn;
         private System.Windows.Forms.Button showPatients_btn;
+        private System.Windows.Forms.Button viewSingleAccount_btn;
+        private System.Windows.Forms.Button showBlockedAccounts_btn;
     }
 }

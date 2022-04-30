@@ -46,5 +46,17 @@ namespace Login
             var allPatientsForm = new AllPatientsForm();
             allPatientsForm.Show();
         }
+
+        private void viewSingleAccount_btn_Click(object sender, EventArgs e)
+        {
+            var singlePatientForm = new ChooseAccountForm();
+            singlePatientForm.Show();
+        }
+
+        private void showBlockedAccounts_btn_Click(object sender, EventArgs e)
+        {
+            var blockedAccountsForm = new BlockedAccountsForm();
+            blockedAccountsForm.Show();
+        }
     }
 }

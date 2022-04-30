@@ -35,3 +35,6 @@ C:\Users\Milenko\Desktop\Everything\Faks shit ass\Uvod u softversko\Vezbe 4\cour
 C:\Users\Milenko\Desktop\Everything\Faks shit ass\Uvod u softversko\Vezbe 4\course-project-tim-14\.github\Login\Login\obj\Debug\Login.Secretary.AllPatientsForm.resources
 C:\Users\Milenko\Desktop\Everything\Faks shit ass\Uvod u softversko\Vezbe 4\course-project-tim-14\.github\Login\Login\obj\Debug\Login.Secretary.AccountDataEditForm.resources
 C:\Users\Milenko\Desktop\Everything\Faks shit ass\Uvod u softversko\Vezbe 4\course-project-tim-14\.github\Login\Login\obj\Debug\Login.Secretary.AccountEditForm.resources
+C:\Users\Milenko\Desktop\Everything\Faks shit ass\Uvod u softversko\Vezbe 4\course-project-tim-14\.github\Login\Login\obj\Debug\Login.Secretary.ChooseAccountForm.resources
+C:\Users\Milenko\Desktop\Everything\Faks shit ass\Uvod u softversko\Vezbe 4\course-project-tim-14\.github\Login\Login\obj\Debug\Login.Secretary.SingleAccountForm.resources
+C:\Users\Milenko\Desktop\Everything\Faks shit ass\Uvod u softversko\Vezbe 4\course-project-tim-14\.github\Login\Login\obj\Debug\Login.Secretary.BlockedAccountsForm.resources
