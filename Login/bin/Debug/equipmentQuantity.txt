@@ -1,3 +1,0 @@
-1|RoomEquipment|Bed|2
-2|RoomEquipment|Table|1
-3|OperatingEquipment|OperatingTable|1

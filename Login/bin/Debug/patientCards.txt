@@ -1,7 +1,0 @@
-1|2|ime2|prezime2|170|75|Nema|Nema|
-2|3|ime3|prezime3|170|75|Nema|Nema|
-3|6|ime6|prezime6|170|75|Nema|Nema|
-4|8|ime8|prezime8|170|75|Nema|Nema|
-5|9|ime9|prezime9|190|95|Polen;Prasina|Nema|
-6|9|ime9|prezime9|190|95|Prasina;Polen|Astma|
-7|10|ime10|prezime10|154|48|Nema|Nema|

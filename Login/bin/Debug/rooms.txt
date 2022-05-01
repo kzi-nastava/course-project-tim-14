@@ -1,8 +1,0 @@
-0|Warehouse
-1|OperatingRoom
-2|BreakRoom
-3|OperatingRoom
-4|BreakRoom
-5|OperatingRoom
-6|OperatingRoom
-7|BreakRoom
