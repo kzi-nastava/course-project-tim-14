@@ -13,6 +13,8 @@ namespace Login
 {
     public partial class FormSecretary : Form
     {
+        readonly CheckupRepository checkupRepository = new CheckupRepository();
+
         public FormSecretary()
         {
             InitializeComponent();
@@ -63,6 +65,12 @@ namespace Login
         {
             var requestCheckForm = new RequestsCheckForm();
             requestCheckForm.Show();
+        }
+
+        private void createCheckupFromRefferal_btn_Click(object sender, EventArgs e)
+        {
+            var createCheckupFromRefferalFrom = new CreateCheckupFromRefferalForm(checkupRepository);
+            createCheckupFromRefferalFrom.Show();
         }
     }
 }
