@@ -189,7 +189,7 @@ namespace Login
         Checkup NewCheckup(string avaliableTime, DateTime date,string doctor) {
             DateTime newDate=GetCheckupDateTime(avaliableTime, date);
             string patientId = currentPatient.id.ToString();
-            Checkup checkup = new Checkup(GetNewCheckupId(),patientId,newDate,doctor);
+            Checkup checkup = new Checkup(GetNewCheckupId(),patientId,newDate,doctor,"n\a");
             return checkup;
         }
 

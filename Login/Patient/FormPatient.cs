@@ -67,5 +67,11 @@ namespace Login
             FormRecommendation formRecommendation = new FormRecommendation(currentPatient,checkupRepository);
             formRecommendation.Show();
         }
+
+        private void medical_history_btn_Click(object sender, EventArgs e)
+        {
+            FormMedicalHistory formMedicalHistory = new FormMedicalHistory(currentPatient, checkupRepository);
+            formMedicalHistory.Show();
+        }
     }
 }

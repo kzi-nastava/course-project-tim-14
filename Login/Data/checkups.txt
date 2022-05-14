@@ -1,17 +1,12 @@
-﻿9|3|4/28/2022 12:00:00 PM|Doktor1
-11|3|4/28/2022 12:15:00 PM|Doktor2
-13|2|4/28/2022 1:45:00 PM|Doktor1
-14|2|4/28/2022 8:15:00 AM|Doktor1
-15|2|4/28/2022 9:15:00 AM|Doktor2
-16|2|4/28/2022 8:30:00 AM|Doktor1
-17|2|5/19/2022 8:00:00 AM|Doktor3
-18|2|5/19/2022 8:15:00 AM|Doktor3
-19|2|5/19/2022 8:30:00 AM|Doktor3
-20|2|5/20/2022 8:00:00 AM|Doktor2
-23|2|5/15/2022 8:00:00 AM|Doktor1
-24|2|5/15/2022 8:00:00 AM|Doktor2
-25|2|5/15/2022 8:00:00 AM|Doktor3
-26|2|5/15/2022 8:15:00 AM|Doktor1
-27|2|5/15/2022 8:15:00 AM|Doktor2
-28|2|5/15/2022 8:15:00 AM|Doktor3
-29|2|5/15/2022 8:45:00 AM|Doktor1
+﻿9|3|4/28/2022 12:00:00 PM|Doktor1|pregled srca
+11|3|4/28/2022 12:15:00 PM|Doktor2|pregled srca
+13|2|4/28/2022 1:45:00 PM|Doktor1|pregled srca
+14|2|4/28/2022 8:15:00 AM|Doktor1|pregled grla
+15|2|4/28/2022 9:15:00 AM|Doktor2|pregled stomaka
+16|2|4/28/2022 8:30:00 AM|Doktor1|pregled grla
+20|2|5/27/2022 8:30:00 AM|Doktor3|n/a
+21|2|4/23/2022 8:15:00 AM|Doktor2|pregled zuba
+22|2|5/15/2022 8:00:00 AM|Doktor1|n
+23|2|5/15/2022 8:00:00 AM|Doktor2|n
+24|2|5/15/2022 8:00:00 AM|Doktor3|n
+25|2|5/15/2022 8:15:00 AM|Doktor1|n
