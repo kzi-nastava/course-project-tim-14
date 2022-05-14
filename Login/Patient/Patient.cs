@@ -40,7 +40,7 @@ namespace Login
 
         public void AddToHistory(DateTime actionDate, string action)
         {
-            using (StreamWriter tw = File.AppendText("history.txt"))
+            using (StreamWriter tw = File.AppendText("../../Data/history.txt"))
             {
                 string line = this.id.ToString() + "|" + actionDate.ToString() + "|" + action + "|" + blocked;
                 tw.WriteLine(line);
