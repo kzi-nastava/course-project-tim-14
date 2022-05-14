@@ -1,0 +1,8 @@
+﻿2|email2|16|10:00|update|false
+3|email2|15|0|delete|false
+4|email2|14|11:15|update|false
+5|email2|21|10:30|update|false
+6|email2|24|0|delete|true
+7|email2|13|0|delete|false
+8|email2|24|13:15|update|false
+9|email2|20|11:30|update|false

@@ -33,7 +33,7 @@ namespace Login
 
         public string FindUser(string email, string password)
         {
-            string userFileName = "users.txt";
+            string userFileName = "../../Data/users.txt";
             string[] lines = File.ReadAllLines(userFileName);
             foreach (string line in lines)
             {

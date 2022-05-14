@@ -21,10 +21,11 @@ namespace Login
             
             InitializeComponent();
             PatientRepository patientRepository = new PatientRepository();
-            patientRepository.LoadPatients("patients.txt");
-            patientRepository.LoadAntitrolls("history.txt");
-            checkupRepository.LoadCheckups("checkups.txt");
-            requestRepository.LoadRequests("deleteUpdateRequests.txt");
+            patientRepository.LoadPatients("../../Data/patients.txt");
+            patientRepository.LoadAntitrolls("../../Data/history.txt");
+            patientRepository.LoadAntitrolls("../../Data/history.txt");
+            checkupRepository.LoadCheckups("../../Data/checkups.txt");
+            requestRepository.LoadRequests("../../Data/deleteUpdateRequests.txt");
             currentPatient = patientRepository.FindPatient(email);
             if (currentPatient.IsBlockedBySystem() || currentPatient.blocked.Equals("blocked"))
             {
@@ -59,6 +60,12 @@ namespace Login
                         checkupUpdate.Show();
                         break;
                 }
+        }
+
+        private void recommend_btn_Click(object sender, EventArgs e)
+        {
+            FormRecommendation formRecommendation = new FormRecommendation();
+            formRecommendation.Show();
         }
     }
 }
