@@ -25,7 +25,7 @@ namespace Login.Secretary
             int lineCounter = 0;
             string newLine = "";
 
-            string[] patientLines = File.ReadAllLines("patients.txt");
+            string[] patientLines = File.ReadAllLines("../../Data/patients.txt");
             foreach (string element in patientLines)
             {
                 lineCounter += 1;
@@ -37,13 +37,13 @@ namespace Login.Secretary
                 }
             }
 
-            lineChanger(newLine, "patients.txt", lineCounter);
+            changeLineInFile(newLine, "../../Data/patients.txt", lineCounter);
 
             MessageBox.Show("Nalog pacijenta blokiran.");
             this.Hide();
         }
 
-        public void lineChanger(string newText, string fileName, int lineToEdit)
+        public void changeLineInFile(string newText, string fileName, int lineToEdit)
         {
             string[] arrLine = File.ReadAllLines(fileName);
             arrLine[lineToEdit - 1] = newText;
@@ -52,7 +52,7 @@ namespace Login.Secretary
 
         private void SingleAccountForm_Load(object sender, EventArgs e)
         {
-            string[] patientLines = File.ReadAllLines("patients.txt");
+            string[] patientLines = File.ReadAllLines("../../Data/patients.txt");
             foreach (string element in patientLines)
             {
                 string[] splitPatientData = element.Split('|');

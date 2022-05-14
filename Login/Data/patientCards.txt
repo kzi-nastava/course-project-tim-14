@@ -1,0 +1,6 @@
+1|2|ime2|prezime2|170|75|Nema|Nema|
+2|3|ime3|prezime3|170|75|Nema|Nema|
+3|6|ime6|prezime6|170|75|Nema|Nema|
+7|10|ime10|prezime10|154|48|Nema|Nema|
+8|8|bozo|bozo|bozo|bozo|asda|asd|
+9|9|Milenko|asdasd|dasdas|ddasd|sdasd|asda|

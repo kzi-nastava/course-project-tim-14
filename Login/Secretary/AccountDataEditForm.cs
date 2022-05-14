@@ -42,7 +42,7 @@ namespace Login.Secretary
             string patientCardsNewLine = "";
             string usersNewLine = "";
 
-            string[] patientLines = File.ReadAllLines("patients.txt");
+            string[] patientLines = File.ReadAllLines("../../Data/patients.txt");
             foreach (string element in patientLines)
             {
                 patientsLineCounter += 1;
@@ -78,7 +78,7 @@ namespace Login.Secretary
                 }
             }
 
-            string[] patientCardLines = File.ReadAllLines("patientCards.txt");
+            string[] patientCardLines = File.ReadAllLines("../../Data/patientCards.txt");
             foreach (string element in patientCardLines)
             {
                 patientCardLineCounter += 1;
@@ -102,7 +102,7 @@ namespace Login.Secretary
                 }
             }
 
-            string[] usersLines = File.ReadAllLines("users.txt");
+            string[] usersLines = File.ReadAllLines("../../Data/users.txt");
             foreach (string element in usersLines)
             {
                 usersLineCounter += 1;
@@ -115,15 +115,15 @@ namespace Login.Secretary
 
             }
 
-            lineChanger(patientsNewLine, "patients.txt", patientsLineCounter);
-            lineChanger(patientCardsNewLine, "patientCards.txt", patientCardLineCounter);
-            lineChanger(usersNewLine, "users.txt", usersLineCounter);
+            changeLineInFile(patientsNewLine, "../../Data/patients.txt", patientsLineCounter);
+            changeLineInFile(patientCardsNewLine, "../../Data/patientCards.txt", patientCardLineCounter);
+            changeLineInFile(usersNewLine, "../../Data/users.txt", usersLineCounter);
 
             MessageBox.Show("Podaci o nalogu uspesno izmenjeni!");
             this.Hide();
         }
 
-        public void lineChanger(string newText, string fileName, int lineToEdit)
+        public void changeLineInFile(string newText, string fileName, int lineToEdit)
         {
             string[] arrLine = File.ReadAllLines(fileName);
             arrLine[lineToEdit - 1] = newText;
