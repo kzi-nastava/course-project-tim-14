@@ -55,7 +55,7 @@ namespace Login
         {
             if (IsDateValid() && time_cb.SelectedIndex != -1 && doctor_cb.SelectedIndex != -1)
             {
-                Checkup newCheckup = new Checkup(GetNewCheckupId(), currentPatient.id.ToString(), GetCheckupDateTime(), doctor_cb.SelectedItem.ToString());
+                Checkup newCheckup = new Checkup(GetNewCheckupId(), currentPatient.id.ToString(), GetCheckupDateTime(), doctor_cb.SelectedItem.ToString(),"n/a");
                 checkupRepository.checkups.Add(newCheckup);
                 checkupRepository.AddCheckupToFile(newCheckup);
                 currentPatient.antitroll.AddAction("add");

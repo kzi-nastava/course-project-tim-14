@@ -33,6 +33,7 @@ namespace Login
             this.checkup = new System.Windows.Forms.Label();
             this.checkupCRUD_btn = new System.Windows.Forms.Button();
             this.recommend_btn = new System.Windows.Forms.Button();
+            this.medical_history_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // checkup_cb
@@ -69,7 +70,7 @@ namespace Login
             // 
             // recommend_btn
             // 
-            this.recommend_btn.Location = new System.Drawing.Point(443, 52);
+            this.recommend_btn.Location = new System.Drawing.Point(366, 48);
             this.recommend_btn.Name = "recommend_btn";
             this.recommend_btn.Size = new System.Drawing.Size(169, 55);
             this.recommend_btn.TabIndex = 3;
@@ -77,11 +78,22 @@ namespace Login
             this.recommend_btn.UseVisualStyleBackColor = true;
             this.recommend_btn.Click += new System.EventHandler(this.recommend_btn_Click);
             // 
+            // medical_history_btn
+            // 
+            this.medical_history_btn.Location = new System.Drawing.Point(574, 48);
+            this.medical_history_btn.Name = "medical_history_btn";
+            this.medical_history_btn.Size = new System.Drawing.Size(166, 55);
+            this.medical_history_btn.TabIndex = 4;
+            this.medical_history_btn.Text = "Pregled anamneza";
+            this.medical_history_btn.UseVisualStyleBackColor = true;
+            this.medical_history_btn.Click += new System.EventHandler(this.medical_history_btn_Click);
+            // 
             // FormPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.medical_history_btn);
             this.Controls.Add(this.recommend_btn);
             this.Controls.Add(this.checkupCRUD_btn);
             this.Controls.Add(this.checkup);
@@ -99,5 +111,6 @@ namespace Login
         private System.Windows.Forms.Label checkup;
         private System.Windows.Forms.Button checkupCRUD_btn;
         private System.Windows.Forms.Button recommend_btn;
+        private System.Windows.Forms.Button medical_history_btn;
     }
 }

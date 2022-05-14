@@ -18,7 +18,7 @@ namespace Login
             foreach (string line in lines)
             {
                 string[] data = line.Split('|');
-                Checkup checkup = new Checkup(Int32.Parse(data[0]),data[1], Convert.ToDateTime(data[2]), data[3]);
+                Checkup checkup = new Checkup(Int32.Parse(data[0]),data[1], Convert.ToDateTime(data[2]), data[3],data[4]);
                 checkups.Add(checkup);
             }
         }
@@ -68,7 +68,7 @@ namespace Login
             TimeSpan newTime = new TimeSpan(int.Parse(hoursMinutes[0]), int.Parse(hoursMinutes[1]), 0);
             DateTime checkupDateTime = checkup.dateTime.Date;
             DateTime newDateTime = checkupDateTime.Add(newTime);
-            Checkup newCheckup = new Checkup(checkup.id, checkup.patient, newDateTime, checkup.doctor);
+            Checkup newCheckup = new Checkup(checkup.id, checkup.patient, newDateTime, checkup.doctor,checkup.medicalHistory);
             return newCheckup;
         }
 
@@ -125,7 +125,7 @@ namespace Login
         {
             using (StreamWriter tw = File.AppendText("../../Data/checkups.txt"))
             {
-                string line = checkup.id.ToString() + "|" + checkup.patient + "|" + checkup.dateTime.ToString() + "|" + checkup.doctor;
+                string line = checkup.id.ToString() + "|" + checkup.patient + "|" + checkup.dateTime.ToString() + "|" + checkup.doctor + "|" + checkup.medicalHistory;
                 tw.WriteLine(line);
                 tw.Close();
             }
@@ -139,7 +139,7 @@ namespace Login
             {
                 if (checkup.id != delCheckup.id)
                 {
-                    string line = checkup.id.ToString() + "|" + checkup.patient + "|" + checkup.dateTime.ToString() + "|" + checkup.doctor;
+                    string line = checkup.id.ToString() + "|" + checkup.patient + "|" + checkup.dateTime.ToString() + "|" + checkup.doctor + "|" + checkup.medicalHistory;
                     tw.WriteLine(line);
                 }
             }
@@ -154,7 +154,7 @@ namespace Login
 
             foreach (Checkup checkup in checkups)
             {
-                string line = checkup.id.ToString() + "|" + checkup.patient + "|" + checkup.dateTime.ToString() + "|" + checkup.doctor;
+                string line = checkup.id.ToString() + "|" + checkup.patient + "|" + checkup.dateTime.ToString() + "|" + checkup.doctor + "|" + checkup.medicalHistory;
                 tw.WriteLine(line);
                 
             }
