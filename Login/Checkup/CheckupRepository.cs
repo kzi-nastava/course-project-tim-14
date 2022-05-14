@@ -122,7 +122,7 @@ namespace Login
 
         public void AddCheckupToFile(Checkup checkup)
         {
-            using (StreamWriter tw = File.AppendText("checkups.txt"))
+            using (StreamWriter tw = File.AppendText("../../Data/checkups.txt"))
             {
                 string line = checkup.id.ToString() + "|" + checkup.patient + "|" + checkup.dateTime.ToString() + "|" + checkup.doctor;
                 tw.WriteLine(line);

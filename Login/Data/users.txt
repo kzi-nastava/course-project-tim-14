@@ -8,3 +8,4 @@
 8|email8|password8|patient
 9|email9|password9|patient
 10|email10|password10|patient
+11|email11|password11|doctor

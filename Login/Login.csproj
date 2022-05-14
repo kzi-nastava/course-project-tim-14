@@ -215,6 +215,12 @@
     <Compile Include="Secretary\ChooseAccountForm.Designer.cs">
       <DependentUpon>ChooseAccountForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Secretary\CreateCheckupFromRefferalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Secretary\CreateCheckupFromRefferalForm.Designer.cs">
+      <DependentUpon>CreateCheckupFromRefferalForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Secretary\PatientCard.cs" />
     <Compile Include="Secretary\RequestsCheckForm.cs">
       <SubType>Form</SubType>
@@ -306,6 +312,9 @@
     <EmbeddedResource Include="Secretary\ChooseAccountForm.resx">
       <DependentUpon>ChooseAccountForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Secretary\CreateCheckupFromRefferalForm.resx">
+      <DependentUpon>CreateCheckupFromRefferalForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Secretary\RequestsCheckForm.resx">
       <DependentUpon>RequestsCheckForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -328,8 +337,15 @@
   <ItemGroup>
     <Content Include="Data\checkups.txt" />
     <Content Include="Data\deleteUpdateRequests.txt" />
+    <Content Include="Data\doctors.txt" />
+    <Content Include="Data\equipment.txt" />
+    <Content Include="Data\equipmentQuantity.txt" />
     <Content Include="Data\history.txt" />
+    <Content Include="Data\movingRequest.txt" />
+    <Content Include="Data\patientCards.txt" />
     <Content Include="Data\patients.txt" />
+    <Content Include="Data\refferals.txt" />
+    <Content Include="Data\rooms.txt" />
     <Content Include="Data\users.txt" />
   </ItemGroup>
   <ItemGroup>
