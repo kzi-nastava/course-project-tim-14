@@ -25,7 +25,7 @@ namespace Login.Secretary
             int lineCounter = 0;
             string newLine = "";
 
-            string[] patientLines = File.ReadAllLines("patients.txt");
+            string[] patientLines = File.ReadAllLines("../../Data/patients.txt");
             foreach (string element in patientLines)
             {
                 lineCounter += 1;
@@ -37,7 +37,7 @@ namespace Login.Secretary
                 }
             }
 
-            lineChanger(newLine, "patients.txt", lineCounter);
+            changeLineInFile(newLine, "../../Data/patients.txt", lineCounter);
 
             MessageBox.Show("Uklonjena blokada sa naloga.");
             this.Hide();
@@ -45,7 +45,7 @@ namespace Login.Secretary
 
         private void BlockedAccountsForm_Load(object sender, EventArgs e)
         {
-            string patientsFilePath = "patients.txt";
+            string patientsFilePath = "../../Data/patients.txt";
             FillRichText(patientsFilePath);
         }
 
@@ -64,7 +64,7 @@ namespace Login.Secretary
             richTextBox1.Text = content;
         }
 
-        public void lineChanger(string newText, string fileName, int lineToEdit)
+        public void changeLineInFile(string newText, string fileName, int lineToEdit)
         {
             string[] arrLine = File.ReadAllLines(fileName);
             arrLine[lineToEdit - 1] = newText;

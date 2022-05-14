@@ -20,9 +20,9 @@ namespace Login.Secretary
 
         private void delete_btn_Click(object sender, EventArgs e)
         {
-            string usersFilePath = "users.txt";
-            string patientsFilePath = "patients.txt";
-            string patientCardsFilePath = "patientCards.txt";
+            string usersFilePath = "../../Data/users.txt";
+            string patientsFilePath = "../../Data/patients.txt";
+            string patientCardsFilePath = "../../Data/patientCards.txt";
 
             string deletedUserID = deletedUserID_tb.Text;
 

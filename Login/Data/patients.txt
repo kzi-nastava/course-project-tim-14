@@ -1,4 +1,4 @@
-﻿2|ime2|prezime2|email2|password2|n/a
+2|ime2|prezime2|email2|password2|n/a
 3|ime3|prezime3|email3|password3|n/a
 6|ime6|prezime6|email6|password6|blocked
 8|ime8|prezime8|email8|password8|n/a

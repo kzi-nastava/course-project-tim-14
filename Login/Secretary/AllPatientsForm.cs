@@ -34,7 +34,7 @@ namespace Login.Secretary
 
         private void AllPatientsForm_Load(object sender, EventArgs e)
         {
-            string patientsFilePath = "patients.txt";
+            string patientsFilePath = "../../Data/patients.txt";
             FillRichText(patientsFilePath);
         }
 
