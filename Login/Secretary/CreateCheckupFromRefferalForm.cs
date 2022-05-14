@@ -51,7 +51,7 @@ namespace Login.Secretary
         {
             if (IsDateValid() && refferalTime_cb.SelectedIndex != -1)
             {
-                Checkup newCheckup = new Checkup(GetNewCheckupId(), GetPatientId(), GetCheckupDateTime(), GetDoctorName());
+                Checkup newCheckup = new Checkup(GetNewCheckupId(), GetPatientId(), GetCheckupDateTime(), GetDoctorName(),"n/a");
                 checkupRepository.checkups.Add(newCheckup);
                 checkupRepository.AddCheckupToFile(newCheckup);
                 MessageBox.Show("Pregled je zakazan.");

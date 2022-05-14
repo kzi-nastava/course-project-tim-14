@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Login
 {
     public partial class FormPatient : Form
@@ -68,7 +69,8 @@ namespace Login
             formRecommendation.Show();
         }
 
-        private void medical_history_btn_Click(object sender, EventArgs e)
+
+        private void medical_history_btn_Click_1(object sender, EventArgs e)
         {
             FormMedicalHistory formMedicalHistory = new FormMedicalHistory(currentPatient, checkupRepository);
             formMedicalHistory.Show();
