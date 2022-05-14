@@ -1,0 +1,8 @@
+0|Warehouse
+1|OperatingRoom
+2|ExaminationRoom
+3|OperatingRoom
+4|BreakRoom
+6|BreakRoom
+7|BreakRoom
+8|BreakRoom

@@ -1,0 +1,376 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EE6FBCD3-D844-45B5-80A0-B3235FD51291}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Login</RootNamespace>
+    <AssemblyName>Login</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Checkup\Checkup.cs" />
+    <Compile Include="Checkup\CheckupRepository.cs" />
+    <Compile Include="Checkup\FormCreateCheckup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Checkup\FormCreateCheckup.Designer.cs">
+      <DependentUpon>FormCreateCheckup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Checkup\FormDeleteCheckup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Checkup\FormDeleteCheckup.Designer.cs">
+      <DependentUpon>FormDeleteCheckup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Checkup\FormReadCheckups.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Checkup\FormReadCheckups.Designer.cs">
+      <DependentUpon>FormReadCheckups.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Checkup\FormUpdateCheckup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Checkup\FormUpdateCheckup.Designer.cs">
+      <DependentUpon>FormUpdateCheckup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClosestRecommendations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClosestRecommendations.Designer.cs">
+      <DependentUpon>ClosestRecommendations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAdmin.Designer.cs">
+      <DependentUpon>FormAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDoctor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDoctor.Designer.cs">
+      <DependentUpon>FormDoctor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSecretary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSecretary.Designer.cs">
+      <DependentUpon>FormSecretary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerRepository\Equipment.cs" />
+    <Compile Include="ManagerRepository\EquipmentRepository.cs" />
+    <Compile Include="ManagerRepository\GUI\DeleteRoomForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerRepository\GUI\DeleteRoomForm.Designer.cs">
+      <DependentUpon>DeleteRoomForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerRepository\GUI\MovingRequestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerRepository\GUI\MovingRequestForm.Designer.cs">
+      <DependentUpon>MovingRequestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerRepository\GUI\NewRoomForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerRepository\GUI\NewRoomForm.Designer.cs">
+      <DependentUpon>NewRoomForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerRepository\GUI\RoomRenovation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerRepository\GUI\RoomRenovation.Designer.cs">
+      <DependentUpon>RoomRenovation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerRepository\GUI\ShowRoomsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerRepository\GUI\ShowRoomsForm.Designer.cs">
+      <DependentUpon>ShowRoomsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerRepository\GUI\UpdateRoomForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerRepository\GUI\UpdateRoomForm.Designer.cs">
+      <DependentUpon>UpdateRoomForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerRepository\GUI\ViewEquipmentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerRepository\GUI\ViewEquipmentForm.Designer.cs">
+      <DependentUpon>ViewEquipmentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerRepository\MovingRequest.cs" />
+    <Compile Include="ManagerRepository\MovingRequestsRepository.cs" />
+    <Compile Include="ManagerRepository\QuantityCounter.cs" />
+    <Compile Include="ManagerRepository\Renovation.cs" />
+    <Compile Include="ManagerRepository\Room.cs" />
+    <Compile Include="ManagerRepository\RoomsRepository.cs" />
+    <Compile Include="Patient\Antitroll.cs" />
+    <Compile Include="Patient\FormPatient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Patient\FormPatient.Designer.cs">
+      <DependentUpon>FormPatient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Patient\Patient.cs" />
+    <Compile Include="Patient\PatientRepository.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FormRecommendation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRecommendation.Designer.cs">
+      <DependentUpon>FormRecommendation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Request\DeleteUpdateRequest.cs" />
+    <Compile Include="Request\DeleteUpdateRequestRepository.cs" />
+    <Compile Include="Secretary\AccountCreationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Secretary\AccountCreationForm.Designer.cs">
+      <DependentUpon>AccountCreationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Secretary\AccountDataEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Secretary\AccountDataEditForm.Designer.cs">
+      <DependentUpon>AccountDataEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Secretary\AccountDeletionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Secretary\AccountDeletionForm.Designer.cs">
+      <DependentUpon>AccountDeletionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Secretary\AccountEditForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Secretary\AccountEditForm.Designer.cs">
+      <DependentUpon>AccountEditForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Secretary\AllPatientsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Secretary\AllPatientsForm.Designer.cs">
+      <DependentUpon>AllPatientsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Secretary\BlockedAccountsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Secretary\BlockedAccountsForm.Designer.cs">
+      <DependentUpon>BlockedAccountsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Secretary\ChooseAccountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Secretary\ChooseAccountForm.Designer.cs">
+      <DependentUpon>ChooseAccountForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Secretary\PatientCard.cs" />
+    <Compile Include="Secretary\RequestsCheckForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Secretary\RequestsCheckForm.Designer.cs">
+      <DependentUpon>RequestsCheckForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Secretary\SingleAccountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Secretary\SingleAccountForm.Designer.cs">
+      <DependentUpon>SingleAccountForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Checkup\FormCreateCheckup.resx">
+      <DependentUpon>FormCreateCheckup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Checkup\FormDeleteCheckup.resx">
+      <DependentUpon>FormDeleteCheckup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Checkup\FormReadCheckups.resx">
+      <DependentUpon>FormReadCheckups.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Checkup\FormUpdateCheckup.resx">
+      <DependentUpon>FormUpdateCheckup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClosestRecommendations.resx">
+      <DependentUpon>ClosestRecommendations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAdmin.resx">
+      <DependentUpon>FormAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDoctor.resx">
+      <DependentUpon>FormDoctor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRecommendation.resx">
+      <DependentUpon>FormRecommendation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSecretary.resx">
+      <DependentUpon>FormSecretary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerRepository\GUI\DeleteRoomForm.resx">
+      <DependentUpon>DeleteRoomForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerRepository\GUI\MovingRequestForm.resx">
+      <DependentUpon>MovingRequestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerRepository\GUI\NewRoomForm.resx">
+      <DependentUpon>NewRoomForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerRepository\GUI\RoomRenovation.resx">
+      <DependentUpon>RoomRenovation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerRepository\GUI\ShowRoomsForm.resx">
+      <DependentUpon>ShowRoomsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerRepository\GUI\UpdateRoomForm.resx">
+      <DependentUpon>UpdateRoomForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerRepository\GUI\ViewEquipmentForm.resx">
+      <DependentUpon>ViewEquipmentForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Patient\FormPatient.resx">
+      <DependentUpon>FormPatient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Secretary\AccountCreationForm.resx">
+      <DependentUpon>AccountCreationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Secretary\AccountDataEditForm.resx">
+      <DependentUpon>AccountDataEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Secretary\AccountDeletionForm.resx">
+      <DependentUpon>AccountDeletionForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Secretary\AccountEditForm.resx">
+      <DependentUpon>AccountEditForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Secretary\AllPatientsForm.resx">
+      <DependentUpon>AllPatientsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Secretary\BlockedAccountsForm.resx">
+      <DependentUpon>BlockedAccountsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Secretary\ChooseAccountForm.resx">
+      <DependentUpon>ChooseAccountForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Secretary\RequestsCheckForm.resx">
+      <DependentUpon>RequestsCheckForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Secretary\SingleAccountForm.resx">
+      <DependentUpon>SingleAccountForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Data\checkups.txt" />
+    <Content Include="Data\deleteUpdateRequests.txt" />
+    <Content Include="Data\doctors.txt" />
+    <Content Include="Data\equipment.txt" />
+    <Content Include="Data\equipmentQuantity.txt" />
+    <Content Include="Data\history.txt" />
+    <Content Include="Data\movingRequest.txt" />
+    <Content Include="Data\patientCards.txt" />
+    <Content Include="Data\patients.txt" />
+    <Content Include="Data\refferals.txt" />
+    <Content Include="Data\renovations.txt" />
+    <Content Include="Data\rooms.txt" />
+    <Content Include="Data\roomCheckupsSchedule.txt" />
+    <Content Include="Data\users.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

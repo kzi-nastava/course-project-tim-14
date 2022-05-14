@@ -77,6 +77,7 @@ namespace Login.ManagerRepository.GUI
             this.movingDatePicker.Name = "movingDatePicker";
             this.movingDatePicker.Size = new System.Drawing.Size(200, 26);
             this.movingDatePicker.TabIndex = 4;
+            this.movingDatePicker.ValueChanged += new System.EventHandler(this.movingDatePicker_ValueChanged);
             // 
             // label3
             // 

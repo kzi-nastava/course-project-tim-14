@@ -12,7 +12,7 @@ namespace Login.ManagerRepository
     public class MovingRequestsRepository
     {
         public List<MovingRequest> movingRequests = new List<MovingRequest>();
-        public string requestsFileName = "movingRequest.txt";
+        public string requestsFileName = "../../Data/movingRequest.txt";
         public int lastId;
         readonly EquipmentRepository equipmentRepository;
         readonly RoomsRepository roomsRepository;
@@ -67,7 +67,10 @@ namespace Login.ManagerRepository
             eq.roomId = movingRequest.roomId;
 
             Room room = roomsRepository.FindRoom(movingRequest.roomId);
+
+
             eq.roomType = room.type;
+
 
             equipmentRepository.ReloadEquipmentRepository();
         }

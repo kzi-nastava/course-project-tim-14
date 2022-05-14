@@ -36,6 +36,7 @@ namespace Login
             this.btnDeleteRoom = new System.Windows.Forms.Button();
             this.btnView = new System.Windows.Forms.Button();
             this.btnRequest = new System.Windows.Forms.Button();
+            this.roomRenovationBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -107,11 +108,22 @@ namespace Login
             this.btnRequest.UseVisualStyleBackColor = true;
             this.btnRequest.Click += new System.EventHandler(this.btnRequest_Click);
             // 
+            // roomRenovationBtn
+            // 
+            this.roomRenovationBtn.Location = new System.Drawing.Point(132, 301);
+            this.roomRenovationBtn.Name = "roomRenovationBtn";
+            this.roomRenovationBtn.Size = new System.Drawing.Size(141, 53);
+            this.roomRenovationBtn.TabIndex = 8;
+            this.roomRenovationBtn.Text = "Plan a Room Renovation";
+            this.roomRenovationBtn.UseVisualStyleBackColor = true;
+            this.roomRenovationBtn.Click += new System.EventHandler(this.roomRenovationBtn_Click);
+            // 
             // FormAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.roomRenovationBtn);
             this.Controls.Add(this.btnRequest);
             this.Controls.Add(this.btnView);
             this.Controls.Add(this.btnDeleteRoom);
@@ -136,5 +148,6 @@ namespace Login
         private System.Windows.Forms.Button btnDeleteRoom;
         private System.Windows.Forms.Button btnView;
         private System.Windows.Forms.Button btnRequest;
+        private System.Windows.Forms.Button roomRenovationBtn;
     }
 }

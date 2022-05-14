@@ -18,6 +18,7 @@ namespace Login
         public RoomsRepository roomsRepository;
         public EquipmentRepository equipmentRepository;
         public MovingRequestsRepository movingRequestsRepository;
+        public CheckupRepository checkupRepository;
 
         public FormAdmin()
         {
@@ -68,6 +69,15 @@ namespace Login
             equipmentRepository.LoadEquipmentRepository();
             movingRequestsRepository = new MovingRequestsRepository(equipmentRepository, roomsRepository);
             movingRequestsRepository.LoadMovingRequestsRepository();
+        }
+
+        private void roomRenovationBtn_Click(object sender, EventArgs e)
+        {
+            CheckupRepository checkupRepository = new CheckupRepository();
+            checkupRepository.LoadCheckups("../../Data/checkups.txt");
+            roomsRepository.LoadRenovations();
+            RoomRenovation roomRenovation = new RoomRenovation(checkupRepository, roomsRepository);
+            roomRenovation.Show();
         }
     }
 }

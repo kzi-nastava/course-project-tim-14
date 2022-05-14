@@ -30,7 +30,6 @@ namespace Login.ManagerRepository.GUI
             int roomId = Int32.Parse(roomIdBox.Text);
             int eqId = Int32.Parse(equipmentIdBox.Text);
             int lastRequestId = movingRequestsRepository.lastId;
-            MessageBox.Show(lastRequestId.ToString(), "");
             movingRequestsRepository.lastId =+ 1;
             MovingRequest movingRequest = new MovingRequest(lastRequestId+1, roomId, eqId, pickedDate);
             movingRequestsRepository.WriteRequest(movingRequest);
@@ -43,6 +42,11 @@ namespace Login.ManagerRepository.GUI
             timePicker.Format = DateTimePickerFormat.Custom;
             timePicker.CustomFormat = "HH:mm";
             timePicker.ShowUpDown = true;
+
+        }
+
+        private void movingDatePicker_ValueChanged(object sender, EventArgs e)
+        {
 
         }
     }
