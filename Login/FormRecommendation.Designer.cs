@@ -54,7 +54,7 @@ namespace Login
             // from_time_cb
             // 
             this.from_time_cb.FormattingEnabled = true;
-            this.from_time_cb.Location = new System.Drawing.Point(147, 118);
+            this.from_time_cb.Location = new System.Drawing.Point(151, 187);
             this.from_time_cb.Name = "from_time_cb";
             this.from_time_cb.Size = new System.Drawing.Size(121, 28);
             this.from_time_cb.TabIndex = 1;
@@ -62,7 +62,7 @@ namespace Login
             // to_time_cb
             // 
             this.to_time_cb.FormattingEnabled = true;
-            this.to_time_cb.Location = new System.Drawing.Point(147, 183);
+            this.to_time_cb.Location = new System.Drawing.Point(147, 252);
             this.to_time_cb.Name = "to_time_cb";
             this.to_time_cb.Size = new System.Drawing.Size(121, 28);
             this.to_time_cb.TabIndex = 2;
@@ -79,7 +79,7 @@ namespace Login
             // from_time_lbl
             // 
             this.from_time_lbl.AutoSize = true;
-            this.from_time_lbl.Location = new System.Drawing.Point(147, 95);
+            this.from_time_lbl.Location = new System.Drawing.Point(147, 164);
             this.from_time_lbl.Name = "from_time_lbl";
             this.from_time_lbl.Size = new System.Drawing.Size(34, 20);
             this.from_time_lbl.TabIndex = 4;
@@ -88,7 +88,7 @@ namespace Login
             // to_time_lbl
             // 
             this.to_time_lbl.AutoSize = true;
-            this.to_time_lbl.Location = new System.Drawing.Point(147, 160);
+            this.to_time_lbl.Location = new System.Drawing.Point(147, 229);
             this.to_time_lbl.Name = "to_time_lbl";
             this.to_time_lbl.Size = new System.Drawing.Size(34, 20);
             this.to_time_lbl.TabIndex = 5;
@@ -96,7 +96,7 @@ namespace Login
             // 
             // to_date_dtp
             // 
-            this.to_date_dtp.Location = new System.Drawing.Point(147, 246);
+            this.to_date_dtp.Location = new System.Drawing.Point(147, 115);
             this.to_date_dtp.Name = "to_date_dtp";
             this.to_date_dtp.Size = new System.Drawing.Size(200, 26);
             this.to_date_dtp.TabIndex = 6;
@@ -104,7 +104,7 @@ namespace Login
             // to_date_lbl
             // 
             this.to_date_lbl.AutoSize = true;
-            this.to_date_lbl.Location = new System.Drawing.Point(147, 223);
+            this.to_date_lbl.Location = new System.Drawing.Point(143, 92);
             this.to_date_lbl.Name = "to_date_lbl";
             this.to_date_lbl.Size = new System.Drawing.Size(74, 20);
             this.to_date_lbl.TabIndex = 7;
@@ -140,6 +140,7 @@ namespace Login
             this.recommend_btn.TabIndex = 10;
             this.recommend_btn.Text = "Preporuci";
             this.recommend_btn.UseVisualStyleBackColor = true;
+            this.recommend_btn.Click += new System.EventHandler(this.recommend_btn_Click);
             // 
             // priority_lbl
             // 
@@ -169,6 +170,7 @@ namespace Login
             this.Controls.Add(this.doctor_cb);
             this.Name = "FormRecommendation";
             this.Text = "Recommendations";
+            this.Load += new System.EventHandler(this.FormRecommendation_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

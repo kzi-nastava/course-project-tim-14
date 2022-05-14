@@ -64,7 +64,7 @@ namespace Login
 
         private void recommend_btn_Click(object sender, EventArgs e)
         {
-            FormRecommendation formRecommendation = new FormRecommendation();
+            FormRecommendation formRecommendation = new FormRecommendation(currentPatient,checkupRepository);
             formRecommendation.Show();
         }
     }

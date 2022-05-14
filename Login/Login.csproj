@@ -87,6 +87,12 @@
     <Compile Include="Checkup\FormUpdateCheckup.Designer.cs">
       <DependentUpon>FormUpdateCheckup.cs</DependentUpon>
     </Compile>
+    <Compile Include="ClosestRecommendations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClosestRecommendations.Designer.cs">
+      <DependentUpon>ClosestRecommendations.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -245,6 +251,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Checkup\FormUpdateCheckup.resx">
       <DependentUpon>FormUpdateCheckup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClosestRecommendations.resx">
+      <DependentUpon>ClosestRecommendations.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
