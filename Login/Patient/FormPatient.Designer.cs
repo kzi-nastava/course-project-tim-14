@@ -35,6 +35,9 @@ namespace Login
             this.recommend_btn = new System.Windows.Forms.Button();
             this.medical_history_btn = new System.Windows.Forms.Button();
             this.doctor_search_btn = new System.Windows.Forms.Button();
+            this.notification_btn = new System.Windows.Forms.Button();
+            this.hours_tb = new System.Windows.Forms.TextBox();
+            this.choose_hours_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // checkup_cb
@@ -99,11 +102,41 @@ namespace Login
             this.doctor_search_btn.UseVisualStyleBackColor = true;
             this.doctor_search_btn.Click += new System.EventHandler(this.doctor_search_btn_Click);
             // 
+            // notification_btn
+            // 
+            this.notification_btn.Location = new System.Drawing.Point(606, 148);
+            this.notification_btn.Name = "notification_btn";
+            this.notification_btn.Size = new System.Drawing.Size(170, 55);
+            this.notification_btn.TabIndex = 6;
+            this.notification_btn.Text = "Obavestenja";
+            this.notification_btn.UseVisualStyleBackColor = true;
+            this.notification_btn.Click += new System.EventHandler(this.notification_btn_Click);
+            // 
+            // hours_tb
+            // 
+            this.hours_tb.Location = new System.Drawing.Point(638, 225);
+            this.hours_tb.Name = "hours_tb";
+            this.hours_tb.Size = new System.Drawing.Size(100, 26);
+            this.hours_tb.TabIndex = 7;
+            // 
+            // choose_hours_btn
+            // 
+            this.choose_hours_btn.Location = new System.Drawing.Point(638, 272);
+            this.choose_hours_btn.Name = "choose_hours_btn";
+            this.choose_hours_btn.Size = new System.Drawing.Size(123, 43);
+            this.choose_hours_btn.TabIndex = 8;
+            this.choose_hours_btn.Text = "Izaberi vreme";
+            this.choose_hours_btn.UseVisualStyleBackColor = true;
+            this.choose_hours_btn.Click += new System.EventHandler(this.choose_hours_btn_Click);
+            // 
             // FormPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(864, 449);
+            this.Controls.Add(this.choose_hours_btn);
+            this.Controls.Add(this.hours_tb);
+            this.Controls.Add(this.notification_btn);
             this.Controls.Add(this.doctor_search_btn);
             this.Controls.Add(this.medical_history_btn);
             this.Controls.Add(this.recommend_btn);
@@ -125,5 +158,8 @@ namespace Login
         private System.Windows.Forms.Button recommend_btn;
         private System.Windows.Forms.Button medical_history_btn;
         private System.Windows.Forms.Button doctor_search_btn;
+        private System.Windows.Forms.Button notification_btn;
+        private System.Windows.Forms.TextBox hours_tb;
+        private System.Windows.Forms.Button choose_hours_btn;
     }
 }

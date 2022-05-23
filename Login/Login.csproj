@@ -177,6 +177,8 @@
     </Compile>
     <Compile Include="Patient\Patient.cs" />
     <Compile Include="Patient\PatientRepository.cs" />
+    <Compile Include="Prescriptions\Prescription.cs" />
+    <Compile Include="Prescriptions\PrescriptionRepository.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Recommendations\ClosestRecommendations.cs">
@@ -373,6 +375,7 @@
     <Content Include="Data\movingRequest.txt" />
     <Content Include="Data\patientCards.txt" />
     <Content Include="Data\patients.txt" />
+    <Content Include="Data\prescriptions.txt" />
     <Content Include="Data\refferals.txt" />
     <Content Include="Data\rooms.txt" />
     <Content Include="Data\users.txt" />
