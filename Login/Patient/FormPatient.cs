@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Login.Prescription;
 
 
 namespace Login
@@ -16,6 +17,7 @@ namespace Login
         readonly Patient currentPatient;
         readonly CheckupRepository checkupRepository = new CheckupRepository();
         public DeleteUpdateRequestRepository requestRepository = new DeleteUpdateRequestRepository();
+        public PrescriptionRepository prescriptionRepository = new PrescriptionRepository();
 
         public FormPatient(string email)
         {
@@ -27,6 +29,8 @@ namespace Login
             patientRepository.LoadAntitrolls("../../Data/history.txt");
             checkupRepository.LoadCheckups("../../Data/checkups.txt");
             requestRepository.LoadRequests("../../Data/deleteUpdateRequests.txt");
+            prescriptionRepository.LoadPrescriptions("../../Data/prescriptions.txt");
+            prescriptionRepository.hoursBefore = 5;
             currentPatient = patientRepository.FindPatient(email);
             if (currentPatient.IsBlockedBySystem() || currentPatient.blocked.Equals("blocked"))
             {
@@ -82,5 +86,37 @@ namespace Login
             formDoctorSearch.Show();
         }
 
+        private void notification_btn_Click(object sender, EventArgs e)
+        {
+            List<Prescription.Prescription> prescriptions=prescriptionRepository.GetPrescriptions(currentPatient.id.ToString());
+            foreach (Prescription.Prescription prescription in prescriptions) {
+                DateTime prescriptionTime = DateTime.ParseExact(prescription.time, "HH:mm", null);
+                for (int i = 0; i < prescription.num; i++)
+                {
+                    prescriptionTime=prescriptionTime.AddHours(24 / prescription.num);
+                    
+                    if (IsTime(prescriptionTime))
+                    {
+                        MessageBox.Show(GetMessage(prescription,prescriptionTime));
+                    }
+                }
+            }
+        }
+
+        public string GetMessage(Prescription.Prescription prescription,DateTime time) {
+            return "Popij " + prescription.medicine + " u " + time.ToString("HH:mm") + " " + prescription.description+".";
+        }
+
+        public bool IsTime(DateTime prescriptionTime) {
+            return prescriptionTime.TimeOfDay < DateTime.Now.AddHours(prescriptionRepository.hoursBefore).TimeOfDay;
+
+            //return prescriptionTime.AddHours(prescriptionRepository.hoursBefore).TimeOfDay > DateTime.Now.TimeOfDay;
+        }
+
+        private void choose_hours_btn_Click(object sender, EventArgs e)
+        {
+            int.TryParse(hours_tb.Text, out prescriptionRepository.hoursBefore);
+            
+        }
     }
 }
