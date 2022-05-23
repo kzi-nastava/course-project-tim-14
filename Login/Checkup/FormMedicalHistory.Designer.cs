@@ -57,6 +57,7 @@ namespace Login
             this.search_lbl.Size = new System.Drawing.Size(153, 20);
             this.search_lbl.TabIndex = 13;
             this.search_lbl.Text = "Pretraga anamneza:";
+            this.search_lbl.Click += new System.EventHandler(this.search_lbl_Click);
             // 
             // search_tb
             // 
@@ -64,6 +65,7 @@ namespace Login
             this.search_tb.Name = "search_tb";
             this.search_tb.Size = new System.Drawing.Size(148, 26);
             this.search_tb.TabIndex = 12;
+            this.search_tb.TextChanged += new System.EventHandler(this.search_tb_TextChanged);
             // 
             // sort_btn
             // 
@@ -84,6 +86,7 @@ namespace Login
             this.dataGridViewCheckups.RowTemplate.Height = 28;
             this.dataGridViewCheckups.Size = new System.Drawing.Size(741, 438);
             this.dataGridViewCheckups.TabIndex = 10;
+            this.dataGridViewCheckups.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewCheckups_CellContentClick);
             // 
             // label1
             // 
@@ -93,6 +96,7 @@ namespace Login
             this.label1.Size = new System.Drawing.Size(85, 20);
             this.label1.TabIndex = 18;
             this.label1.Text = "Sortiraj po:";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // sort_cb
             // 
@@ -101,6 +105,7 @@ namespace Login
             this.sort_cb.Name = "sort_cb";
             this.sort_cb.Size = new System.Drawing.Size(148, 28);
             this.sort_cb.TabIndex = 19;
+            this.sort_cb.SelectedIndexChanged += new System.EventHandler(this.sort_cb_SelectedIndexChanged);
             // 
             // FormMedicalHistory
             // 

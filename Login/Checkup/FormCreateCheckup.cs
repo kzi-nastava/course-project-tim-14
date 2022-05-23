@@ -14,18 +14,33 @@ namespace Login
     {
         readonly CheckupRepository checkupRepository;
         readonly Patient currentPatient;
-
-        public FormCreateCheckup(Patient patient, CheckupRepository ckpRepository)
+        readonly DoctorRepository doctorRepository = new DoctorRepository();
+        readonly string doctor;
+        public FormCreateCheckup(Patient patient, CheckupRepository ckpRepository,string doctor)
         {
             InitializeComponent();
             currentPatient = patient;
             checkupRepository = ckpRepository;
+            this.doctor = doctor;
+            doctorRepository.LoadDoctors("../../Data/doctors.txt");
         }
 
         private void FormCreateCheckup_Load(object sender, EventArgs e)
         {
+           
+            LoadDoctorCB();
+            SetDoctor();
             checkup_date.ValueChanged += new System.EventHandler(checkup_date_ValueChanged);
-            time_cb.SelectedIndexChanged += new System.EventHandler(time_cb_SelectedIndexChanged);
+            
+        }
+
+        void SetDoctor() {
+            if (!doctor.Equals(""))
+            {
+                doctor_cb.SelectedItem = doctor;
+                doctor_cb.SelectedText = doctor;
+                doctor_cb.SelectedIndex = doctor_cb.FindString(doctor);
+            }
         }
 
         private void checkup_date_ValueChanged(Object sender, EventArgs e)
@@ -37,18 +52,11 @@ namespace Login
 
         }
 
-        private void time_cb_SelectedIndexChanged(Object sender, EventArgs e)
-        {
-            if (IsDateValid())
-            {
-                doctor_cb.Items.Add("Doktor1");
-                doctor_cb.Items.Add("Doktor2");
-                doctor_cb.Items.Add("Doktor3");
-                doctor_cb.Refresh();
-            }             
-            else
-                MessageBox.Show("Doslo je do greske!");
+ 
 
+        void LoadDoctorCB() {
+            foreach (Doctor doctor in doctorRepository.doctors)
+                doctor_cb.Items.Add(doctor.name);
         }
 
         private void create_checkup_Click(object sender, EventArgs e)

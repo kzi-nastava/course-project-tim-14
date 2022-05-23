@@ -34,6 +34,7 @@ namespace Login
             this.checkupCRUD_btn = new System.Windows.Forms.Button();
             this.recommend_btn = new System.Windows.Forms.Button();
             this.medical_history_btn = new System.Windows.Forms.Button();
+            this.doctor_search_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // checkup_cb
@@ -88,11 +89,22 @@ namespace Login
             this.medical_history_btn.UseVisualStyleBackColor = true;
             this.medical_history_btn.Click += new System.EventHandler(this.medical_history_btn_Click_1);
             // 
+            // doctor_search_btn
+            // 
+            this.doctor_search_btn.Location = new System.Drawing.Point(392, 148);
+            this.doctor_search_btn.Name = "doctor_search_btn";
+            this.doctor_search_btn.Size = new System.Drawing.Size(170, 55);
+            this.doctor_search_btn.TabIndex = 5;
+            this.doctor_search_btn.Text = "Pretraga doktora";
+            this.doctor_search_btn.UseVisualStyleBackColor = true;
+            this.doctor_search_btn.Click += new System.EventHandler(this.doctor_search_btn_Click);
+            // 
             // FormPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(864, 449);
+            this.Controls.Add(this.doctor_search_btn);
             this.Controls.Add(this.medical_history_btn);
             this.Controls.Add(this.recommend_btn);
             this.Controls.Add(this.checkupCRUD_btn);
@@ -112,5 +124,6 @@ namespace Login
         private System.Windows.Forms.Button checkupCRUD_btn;
         private System.Windows.Forms.Button recommend_btn;
         private System.Windows.Forms.Button medical_history_btn;
+        private System.Windows.Forms.Button doctor_search_btn;
     }
 }
