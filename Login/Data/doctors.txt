@@ -1,3 +1,3 @@
-4|Doktor1|prezime4|email4|password4|specijalizacija1
-5|Doktor2|prezime5|email5|password5|specijalizacija2
-11|Doktor3|prezime11|email11|password11|opsti
+4|Doktor1|prezime4|email4|password4|specijalizacija1|4.5
+5|Doktor2|prezime5|email5|password5|specijalizacija2|4.7
+11|Doktor3|prezime11|email11|password11|opsti|4.3

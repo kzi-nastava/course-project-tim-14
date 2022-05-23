@@ -6,8 +6,12 @@
 16|2|4/28/2022 8:30:00 AM|Doktor1|pregled grla
 20|2|5/27/2022 8:30:00 AM|Doktor3|n/a
 21|2|4/23/2022 8:15:00 AM|Doktor2|pregled zuba
-22|2|5/15/2022 8:00:00 AM|Doktor1|n
-23|2|5/15/2022 8:00:00 AM|Doktor2|n
-24|2|5/15/2022 8:00:00 AM|Doktor3|n
-25|2|5/15/2022 8:15:00 AM|Doktor1|n
-26|2|5/24/2022 8:00:00 AM|Doktor1|n
+22|2|5/15/2022 8:00:00 AM|Doktor1|opsti pregled
+23|2|5/15/2022 8:00:00 AM|Doktor2|pregled glave
+24|2|5/15/2022 8:00:00 AM|Doktor3|opsti pregled
+25|2|5/15/2022 8:15:00 AM|Doktor1|prgled srca
+26|2|5/24/2022 8:00:00 AM|Doktor1|pregled glave
+27|2|5/26/2022 8:00:00 AM|Doktor2|n
+28|2|5/26/2022 8:15:00 AM|Doktor2|n
+29|2|6/2/2022 10:00:00 AM|Doktor3|n/a
+30|2|5/30/2022 10:15:00 AM|Doktor2|n/a

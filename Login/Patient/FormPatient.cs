@@ -47,7 +47,7 @@ namespace Login
                         break;
                     case 1:
                         this.Hide();
-                        FormCreateCheckup checkupCreate = new FormCreateCheckup(currentPatient, checkupRepository);
+                        FormCreateCheckup checkupCreate = new FormCreateCheckup(currentPatient, checkupRepository,"");
                         checkupCreate.Show();
                         break;
                     case 2:
@@ -75,5 +75,12 @@ namespace Login
             FormMedicalHistory formMedicalHistory = new FormMedicalHistory(currentPatient, checkupRepository);
             formMedicalHistory.Show();
         }
+
+        private void doctor_search_btn_Click(object sender, EventArgs e)
+        {
+            FormDoctorSearch formDoctorSearch = new FormDoctorSearch(currentPatient, checkupRepository);
+            formDoctorSearch.Show();
+        }
+
     }
 }

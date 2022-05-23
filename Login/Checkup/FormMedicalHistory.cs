@@ -60,7 +60,9 @@ namespace Login
             foreach (Checkup checkup in checkupRepository.checkups)
             {
                 if (checkup.patient.Equals(currentPatientId) && checkup.dateTime < DateTime.Now)
+
                     if(checkup.medicalHistory.Contains(search_tb.Text))
+
                         checkupTable.Rows.Add(checkup.id, checkup.dateTime, checkup.doctor, checkup.medicalHistory,GetDoctorType(checkup.doctor));
             }
         }
@@ -90,6 +92,31 @@ namespace Login
                     return data[5];
             }
             return null;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void search_lbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void search_tb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sort_cb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridViewCheckups_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
