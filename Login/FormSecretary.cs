@@ -13,11 +13,12 @@ namespace Login
 {
     public partial class FormSecretary : Form
     {
-        readonly CheckupRepository checkupRepository = new CheckupRepository();
+        readonly CheckupRepository checkupRepository = new CheckupRepository();   
 
         public FormSecretary()
         {
             InitializeComponent();
+            PatientCardRepository cardRepository = new PatientCardRepository();
         }
 
         private void label1_Click(object sender, EventArgs e)
