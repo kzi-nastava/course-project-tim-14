@@ -36,6 +36,9 @@ namespace Login
             this.btnDeleteRoom = new System.Windows.Forms.Button();
             this.btnView = new System.Windows.Forms.Button();
             this.btnRequest = new System.Windows.Forms.Button();
+            this.newMedicineBtn = new System.Windows.Forms.Button();
+            this.ViewIngredientsBtn = new System.Windows.Forms.Button();
+            this.rejectedBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -107,11 +110,44 @@ namespace Login
             this.btnRequest.UseVisualStyleBackColor = true;
             this.btnRequest.Click += new System.EventHandler(this.btnRequest_Click);
             // 
+            // newMedicineBtn
+            // 
+            this.newMedicineBtn.Location = new System.Drawing.Point(41, 285);
+            this.newMedicineBtn.Name = "newMedicineBtn";
+            this.newMedicineBtn.Size = new System.Drawing.Size(141, 55);
+            this.newMedicineBtn.TabIndex = 8;
+            this.newMedicineBtn.Text = "Add a New Medicine";
+            this.newMedicineBtn.UseVisualStyleBackColor = true;
+            this.newMedicineBtn.Click += new System.EventHandler(this.newMedicineBtn_Click);
+            // 
+            // ViewIngredientsBtn
+            // 
+            this.ViewIngredientsBtn.Location = new System.Drawing.Point(218, 290);
+            this.ViewIngredientsBtn.Name = "ViewIngredientsBtn";
+            this.ViewIngredientsBtn.Size = new System.Drawing.Size(142, 50);
+            this.ViewIngredientsBtn.TabIndex = 9;
+            this.ViewIngredientsBtn.Text = "View Ingredients";
+            this.ViewIngredientsBtn.UseVisualStyleBackColor = true;
+            this.ViewIngredientsBtn.Click += new System.EventHandler(this.ViewIngredientsBtn_Click);
+            // 
+            // rejectedBtn
+            // 
+            this.rejectedBtn.Location = new System.Drawing.Point(41, 361);
+            this.rejectedBtn.Name = "rejectedBtn";
+            this.rejectedBtn.Size = new System.Drawing.Size(141, 56);
+            this.rejectedBtn.TabIndex = 10;
+            this.rejectedBtn.Text = "View Rejected Medicine";
+            this.rejectedBtn.UseVisualStyleBackColor = true;
+            this.rejectedBtn.Click += new System.EventHandler(this.rejectedBtn_Click);
+            // 
             // FormAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.rejectedBtn);
+            this.Controls.Add(this.ViewIngredientsBtn);
+            this.Controls.Add(this.newMedicineBtn);
             this.Controls.Add(this.btnRequest);
             this.Controls.Add(this.btnView);
             this.Controls.Add(this.btnDeleteRoom);
@@ -136,5 +172,8 @@ namespace Login
         private System.Windows.Forms.Button btnDeleteRoom;
         private System.Windows.Forms.Button btnView;
         private System.Windows.Forms.Button btnRequest;
+        private System.Windows.Forms.Button newMedicineBtn;
+        private System.Windows.Forms.Button ViewIngredientsBtn;
+        private System.Windows.Forms.Button rejectedBtn;
     }
 }

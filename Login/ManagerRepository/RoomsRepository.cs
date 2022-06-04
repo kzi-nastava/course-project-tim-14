@@ -10,7 +10,7 @@ namespace Login.ManagerRepository
     public class RoomsRepository
     {
         public List<Room> rooms = new List<Room>();
-        public string roomsFileName = "rooms.txt";
+        public string roomsFileName = "../../Data/rooms.txt";
 
         public RoomsRepository()
         {

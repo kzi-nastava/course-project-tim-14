@@ -12,7 +12,7 @@ namespace Login.ManagerRepository
     public class MovingRequestsRepository
     {
         public List<MovingRequest> movingRequests = new List<MovingRequest>();
-        public string requestsFileName = "movingRequest.txt";
+        public string requestsFileName = "../../Data/movingRequest.txt";
         public int lastId;
         readonly EquipmentRepository equipmentRepository;
         readonly RoomsRepository roomsRepository;

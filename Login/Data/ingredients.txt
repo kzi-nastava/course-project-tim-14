@@ -1,0 +1,4 @@
+1|paracetamol
+2|propyphenazone
+3|caffeine
+4|codeine
