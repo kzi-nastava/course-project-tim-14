@@ -12,8 +12,8 @@ namespace Login.ManagerRepository
     public class EquipmentRepository
     {
         public List<Equipment> allEquipment = new List<Equipment>();
-        public string equipmentFileName = "equipment.txt";
-        public string quantityFileName = "equipmentQuantity.txt";
+        public string equipmentFileName = "../../Data/equipment.txt";
+        public string quantityFileName = "../../Data/equipmentQuantity.txt";
 
         public void LoadEquipmentRepository()
         {
