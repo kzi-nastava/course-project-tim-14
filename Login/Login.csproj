@@ -127,17 +127,59 @@
     </Compile>
     <Compile Include="ManagerRepository\Equipment.cs" />
     <Compile Include="ManagerRepository\EquipmentRepository.cs" />
+    <Compile Include="ManagerRepository\GUI\DeleteIngredientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerRepository\GUI\DeleteIngredientForm.Designer.cs">
+      <DependentUpon>DeleteIngredientForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManagerRepository\GUI\DeleteRoomForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ManagerRepository\GUI\DeleteRoomForm.Designer.cs">
       <DependentUpon>DeleteRoomForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManagerRepository\GUI\EditIngredient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerRepository\GUI\EditIngredient.Designer.cs">
+      <DependentUpon>EditIngredient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerRepository\GUI\EditMedicineForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerRepository\GUI\EditMedicineForm.Designer.cs">
+      <DependentUpon>EditMedicineForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerRepository\GUI\IngredientsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerRepository\GUI\IngredientsForm.Designer.cs">
+      <DependentUpon>IngredientsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerRepository\GUI\RejectedMedicineForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerRepository\GUI\RejectedMedicineForm.Designer.cs">
+      <DependentUpon>RejectedMedicineForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManagerRepository\GUI\MovingRequestForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ManagerRepository\GUI\MovingRequestForm.Designer.cs">
       <DependentUpon>MovingRequestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerRepository\GUI\NewIngredientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerRepository\GUI\NewIngredientForm.Designer.cs">
+      <DependentUpon>NewIngredientForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerRepository\GUI\NewMedicineForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerRepository\GUI\NewMedicineForm.Designer.cs">
+      <DependentUpon>NewMedicineForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ManagerRepository\GUI\NewRoomForm.cs">
       <SubType>Form</SubType>
@@ -163,6 +205,10 @@
     <Compile Include="ManagerRepository\GUI\ViewEquipmentForm.Designer.cs">
       <DependentUpon>ViewEquipmentForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManagerRepository\Ingredient.cs" />
+    <Compile Include="ManagerRepository\IngredientRepository.cs" />
+    <Compile Include="ManagerRepository\Medicine.cs" />
+    <Compile Include="ManagerRepository\MedicineRepository.cs" />
     <Compile Include="ManagerRepository\MovingRequest.cs" />
     <Compile Include="ManagerRepository\MovingRequestsRepository.cs" />
     <Compile Include="ManagerRepository\QuantityCounter.cs" />
@@ -293,11 +339,32 @@
     <EmbeddedResource Include="FormSecretary.resx">
       <DependentUpon>FormSecretary.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ManagerRepository\GUI\DeleteIngredientForm.resx">
+      <DependentUpon>DeleteIngredientForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ManagerRepository\GUI\DeleteRoomForm.resx">
       <DependentUpon>DeleteRoomForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ManagerRepository\GUI\EditIngredient.resx">
+      <DependentUpon>EditIngredient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerRepository\GUI\EditMedicineForm.resx">
+      <DependentUpon>EditMedicineForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerRepository\GUI\IngredientsForm.resx">
+      <DependentUpon>IngredientsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerRepository\GUI\RejectedMedicineForm.resx">
+      <DependentUpon>RejectedMedicineForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ManagerRepository\GUI\MovingRequestForm.resx">
       <DependentUpon>MovingRequestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerRepository\GUI\NewIngredientForm.resx">
+      <DependentUpon>NewIngredientForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerRepository\GUI\NewMedicineForm.resx">
+      <DependentUpon>NewMedicineForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerRepository\GUI\NewRoomForm.resx">
       <DependentUpon>NewRoomForm.cs</DependentUpon>
@@ -382,6 +449,8 @@
     <Content Include="Data\equipment.txt" />
     <Content Include="Data\equipmentQuantity.txt" />
     <Content Include="Data\history.txt" />
+    <Content Include="Data\ingredients.txt" />
+    <Content Include="Data\medicine.txt" />
     <Content Include="Data\movingRequest.txt" />
     <Content Include="Data\patientCards.txt" />
     <Content Include="Data\patients.txt" />

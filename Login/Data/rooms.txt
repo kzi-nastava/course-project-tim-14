@@ -1,10 +1,4 @@
 0|Warehouse
-2|Examination Room
-3|OperatingRoom
-4|BreakRoom
-6|Break Room
-7|BreakRoom8
-0|Warehouse
 1|OperatingRoom
 2|BreakRoom
 3|OperatingRoom
@@ -12,19 +6,3 @@
 6|OperatingRoom
 7|BreakRoom8
 8|BreakRoom
-0|Warehouse
-1|OperatingRoom
-2|BreakRoom
-3|OperatingRoom
-4|BreakRoom
-6|Break Room
-7|BreakRoom8
-0|Warehouse
-1|OperatingRoom
-2|BreakRoom
-3|OperatingRoom
-4|BreakRoom
-6|OperatingRoom
-7|BreakRoom8
-8|BreakRoom
-9|OperatingRoom
