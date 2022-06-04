@@ -244,6 +244,7 @@
       <DependentUpon>CreateCheckupFromRefferalForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Secretary\PatientCard.cs" />
+    <Compile Include="Secretary\PatientCardRepository.cs" />
     <Compile Include="Secretary\RequestsCheckForm.cs">
       <SubType>Form</SubType>
     </Compile>

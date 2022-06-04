@@ -19,6 +19,7 @@ namespace Login
         {
             InitializeComponent();
             PatientCardRepository cardRepository = new PatientCardRepository();
+            cardRepository.LoadPatientCards("../../Data/patientCards.txt");
         }
 
         private void label1_Click(object sender, EventArgs e)
