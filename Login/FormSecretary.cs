@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace Login
 {
@@ -18,8 +19,6 @@ namespace Login
         public FormSecretary()
         {
             InitializeComponent();
-            PatientCardRepository cardRepository = new PatientCardRepository();
-            cardRepository.LoadPatientCards("../../Data/patientCards.txt");
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -71,8 +70,63 @@ namespace Login
 
         private void createCheckupFromRefferal_btn_Click(object sender, EventArgs e)
         {
-            var createCheckupFromRefferalFrom = new CreateCheckupFromRefferalForm(checkupRepository);
-            createCheckupFromRefferalFrom.Show();
+            var createCheckupFromRefferalForm = new CreateCheckupFromRefferalForm(checkupRepository);
+            createCheckupFromRefferalForm.Show();
+        }
+
+        private void dynEquipmentCheck_btn_Click(object sender, EventArgs e)
+        {
+            var createDynamicEquipmentCheckForm = new DynamicEquipmentCheckForm();
+            createDynamicEquipmentCheckForm.Show();
+        }
+
+        private void orderRequestHandle_btn_Click(object sender, EventArgs e)
+        {
+            string[] fileContent = File.ReadAllLines("../../Data/dynamicEquipmentRequests.txt");
+
+            foreach (string element in fileContent)
+            {
+                string[] splitRequest = element.Split('|');
+                if (splitRequest[5] == "0")
+                {
+                    DateTime requestTime = Convert.ToDateTime(splitRequest[4]);
+                    if (DateTime.Now > requestTime.AddDays(1))
+                    {
+                        string newRequestLine = splitRequest[0] + "|" + splitRequest[1] + "|" + splitRequest[2] + "|" + splitRequest[3] + "|" + splitRequest[4] + "|" + "1";
+                        completeRequest(splitRequest[1], splitRequest[3], newRequestLine);
+                    }
+                }             
+            }
+
+            MessageBox.Show("Zahtevi za narudzbinu obradjeni.");
+        }
+
+        private void completeRequest(string equipmentId, string quantity, string newRequestLine)
+        {
+            changeLineInFile(newRequestLine, "../../Data/dynamicEquipmentRequests.txt", Int32.Parse(newRequestLine.Split('|')[0]));
+            addQuantityToEquipment(equipmentId, quantity);
+        }
+
+        private void addQuantityToEquipment(string equipmentId, string quantity)
+        {
+            string[] fileContent = File.ReadAllLines("../../Data/dynamicEquipment.txt");
+
+            foreach (string element in fileContent)
+            {
+                string[] splitEquipment = element.Split('|');
+                if (splitEquipment[0] == equipmentId)
+                {
+                    string newLine = splitEquipment[0] + "|" + splitEquipment[1] + "|" + (Int32.Parse(splitEquipment[2]) + Int32.Parse(quantity)).ToString();
+                    changeLineInFile(newLine, "../../Data/dynamicEquipment.txt", Int32.Parse(splitEquipment[0]));
+                }
+            }
+        }
+
+        public void changeLineInFile(string newText, string fileName, int lineToEdit)
+        {
+            string[] arrLine = File.ReadAllLines(fileName);
+            arrLine[lineToEdit - 1] = newText;
+            File.WriteAllLines(fileName, arrLine);
         }
     }
 }
