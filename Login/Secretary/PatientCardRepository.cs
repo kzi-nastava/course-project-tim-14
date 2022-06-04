@@ -27,7 +27,7 @@ namespace Login.Secretary
         {
             foreach (PatientCard patientCard in patientCards)
             {
-                if (patientCard.id == id)
+                if (patientCard.cardId == id)
                 {
                     return patientCard;
                 }
