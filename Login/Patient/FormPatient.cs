@@ -30,7 +30,7 @@ namespace Login
             checkupRepository.LoadCheckups("../../Data/checkups.txt");
             requestRepository.LoadRequests("../../Data/deleteUpdateRequests.txt");
             prescriptionRepository.LoadPrescriptions("../../Data/prescriptions.txt");
-            prescriptionRepository.hoursBefore = 5;
+            prescriptionRepository.hoursBefore = 7;
             currentPatient = patientRepository.FindPatient(email);
             if (currentPatient.IsBlockedBySystem() || currentPatient.blocked.Equals("blocked"))
             {
@@ -108,9 +108,7 @@ namespace Login
         }
 
         public bool IsTime(DateTime prescriptionTime) {
-            return prescriptionTime.TimeOfDay < DateTime.Now.AddHours(prescriptionRepository.hoursBefore).TimeOfDay;
-
-            //return prescriptionTime.AddHours(prescriptionRepository.hoursBefore).TimeOfDay > DateTime.Now.TimeOfDay;
+            return prescriptionTime.AddHours(prescriptionRepository.hoursBefore).TimeOfDay < DateTime.Now.TimeOfDay;
         }
 
         private void choose_hours_btn_Click(object sender, EventArgs e)
@@ -118,5 +116,13 @@ namespace Login
             int.TryParse(hours_tb.Text, out prescriptionRepository.hoursBefore);
             
         }
+
+        private void survey_btn_Click(object sender, EventArgs e)
+        {
+            FormSurvey formSurvey = new FormSurvey(currentPatient.id,"bolnica");
+            formSurvey.Show();
+        }
+
+
     }
 }

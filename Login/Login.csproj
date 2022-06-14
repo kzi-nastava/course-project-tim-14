@@ -125,6 +125,12 @@
     <Compile Include="FormSecretary.Designer.cs">
       <DependentUpon>FormSecretary.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormSurvey.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSurvey.Designer.cs">
+      <DependentUpon>FormSurvey.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManagerRepository\Equipment.cs" />
     <Compile Include="ManagerRepository\EquipmentRepository.cs" />
     <Compile Include="ManagerRepository\GUI\DeleteIngredientForm.cs">
@@ -309,6 +315,8 @@
     <Compile Include="Secretary\SingleAccountForm.Designer.cs">
       <DependentUpon>SingleAccountForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Survey.cs" />
+    <Compile Include="SurveyRepository.cs" />
     <EmbeddedResource Include="Checkup\FormCreateCheckup.resx">
       <DependentUpon>FormCreateCheckup.cs</DependentUpon>
     </EmbeddedResource>
@@ -338,6 +346,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormSecretary.resx">
       <DependentUpon>FormSecretary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSurvey.resx">
+      <DependentUpon>FormSurvey.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerRepository\GUI\DeleteIngredientForm.resx">
       <DependentUpon>DeleteIngredientForm.cs</DependentUpon>
@@ -457,6 +468,7 @@
     <Content Include="Data\prescriptions.txt" />
     <Content Include="Data\refferals.txt" />
     <Content Include="Data\rooms.txt" />
+    <Content Include="Data\surveys.txt" />
     <Content Include="Data\users.txt" />
   </ItemGroup>
   <ItemGroup>
