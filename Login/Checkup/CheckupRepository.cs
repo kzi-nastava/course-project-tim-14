@@ -50,6 +50,15 @@ namespace Login
             return avaliableTimes;
         }
 
+        public List<Checkup> GetCheckups(int patient) {
+            List<Checkup> patientCheckups = new List<Checkup>();
+            foreach (Checkup checkup in checkups)
+                if (checkup.CheckupOf(patient))
+                    patientCheckups.Add(checkup);
+
+            return patientCheckups;
+        }
+
         public Checkup FindCheckup(int id)
         {
             foreach (Checkup checkup in checkups)

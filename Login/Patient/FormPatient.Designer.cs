@@ -38,6 +38,7 @@ namespace Login
             this.notification_btn = new System.Windows.Forms.Button();
             this.hours_tb = new System.Windows.Forms.TextBox();
             this.choose_hours_btn = new System.Windows.Forms.Button();
+            this.survey_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // checkup_cb
@@ -129,11 +130,22 @@ namespace Login
             this.choose_hours_btn.UseVisualStyleBackColor = true;
             this.choose_hours_btn.Click += new System.EventHandler(this.choose_hours_btn_Click);
             // 
+            // survey_btn
+            // 
+            this.survey_btn.Location = new System.Drawing.Point(392, 260);
+            this.survey_btn.Name = "survey_btn";
+            this.survey_btn.Size = new System.Drawing.Size(170, 55);
+            this.survey_btn.TabIndex = 9;
+            this.survey_btn.Text = "Anketa";
+            this.survey_btn.UseVisualStyleBackColor = true;
+            this.survey_btn.Click += new System.EventHandler(this.survey_btn_Click);
+            // 
             // FormPatient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(864, 449);
+            this.Controls.Add(this.survey_btn);
             this.Controls.Add(this.choose_hours_btn);
             this.Controls.Add(this.hours_tb);
             this.Controls.Add(this.notification_btn);
@@ -161,5 +173,6 @@ namespace Login
         private System.Windows.Forms.Button notification_btn;
         private System.Windows.Forms.TextBox hours_tb;
         private System.Windows.Forms.Button choose_hours_btn;
+        private System.Windows.Forms.Button survey_btn;
     }
 }

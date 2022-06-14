@@ -33,15 +33,27 @@ namespace Login
             table.Columns.Add("ID");
             table.Columns.Add("Vreme");
             table.Columns.Add("Doktor");
-            foreach (Checkup checkup in checkupRepository.checkups)
+            foreach (Checkup checkup in checkupRepository.GetCheckups(patientId))
             {
-                if (Int32.Parse(checkup.patient) == patientId)
-                {
-                    table.Rows.Add(checkup.id, checkup.dateTime, checkup.doctor);
-                }
+                table.Rows.Add(checkup.id, checkup.dateTime, checkup.doctor);
             }
 
             CheckupTable.DataSource = table;
+        }
+
+        private void rate_btn_Click(object sender, EventArgs e)
+        {
+            if (CheckupTable.SelectedRows.Count > 0)
+            {
+                string doctor = GetSelectedDoctor();
+                FormSurvey formSurvey = new FormSurvey(patientId, doctor);
+                formSurvey.Show();
+            }
+            
+        }
+        string GetSelectedDoctor()
+        {
+            return CheckupTable.SelectedRows[0].Cells[2].Value.ToString();
         }
     }
 }

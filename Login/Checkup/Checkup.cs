@@ -9,9 +9,9 @@ namespace Login
     public class Checkup
     {
         public int id;
-        public string patient; //TREBA DA BUDE TIPA PATIENT
+        public string patient;
         public DateTime dateTime;
-        public string doctor;  //TREBA DA BUDE TIPA DOCTOR
+        public string doctor;
         public string medicalHistory;
         
         public Checkup(int id,string patient,DateTime dateTime,string doctor,string medicalHistory)
@@ -21,6 +21,10 @@ namespace Login
             this.dateTime = dateTime;
             this.doctor = doctor;
             this.medicalHistory = medicalHistory;
+        }
+
+        public bool CheckupOf(int patient) {
+            return Int32.Parse(this.patient) == patient;
         }
     }
 }
