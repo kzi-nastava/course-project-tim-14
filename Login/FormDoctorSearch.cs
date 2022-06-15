@@ -12,17 +12,15 @@ namespace Login
 {
     public partial class FormDoctorSearch : Form
     {
-        CheckupRepository checkupRepository;
-        DoctorRepository doctorRepository=new DoctorRepository();
+        CheckupRepository checkupRepository = new CheckupRepository("../../Data/checkups.txt");
+        DoctorRepository doctorRepository = new DoctorRepository("../../Data/doctors.txt");
         Patient currentPatient;
         string currentPatientId;
         DataTable doctorTable = new DataTable();
-        public FormDoctorSearch(Patient currentPatient,CheckupRepository checkupRepository)
+        public FormDoctorSearch(Patient currentPatient)
         {
             InitializeComponent();
-            doctorRepository.LoadDoctors("../../Data/doctors.txt");
             this.currentPatient = currentPatient;
-            this.checkupRepository = checkupRepository;
             currentPatientId = currentPatient.id.ToString();
             CreateDoctorTable();
         }
@@ -87,7 +85,7 @@ namespace Login
         {
             if (dataGridViewDoctors.SelectedRows.Count > 0)
             {
-                FormCreateCheckup createCheckup = new FormCreateCheckup(currentPatient,checkupRepository,GetSelectedDoctor());
+                FormCreateCheckup createCheckup = new FormCreateCheckup(currentPatient,GetSelectedDoctor());
                 createCheckup.Show();
             }
         }

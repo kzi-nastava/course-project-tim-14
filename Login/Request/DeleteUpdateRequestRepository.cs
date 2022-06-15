@@ -22,8 +22,13 @@ namespace Login
             }
         }
 
+        public DeleteUpdateRequestRepository(string fileName) {
+            LoadRequests(fileName);
+        }
+
         public void AddRequestToFile(DeleteUpdateRequest request)
         {
+            requests.Add(request);
             using (StreamWriter tw = File.AppendText("deleteUpdateRequests.txt"))
             {
                 string line = request.id.ToString() + "|" + request.patient + "|" + request.checkup.ToString() + "|" + request.time + "|" + request.type + "|" + request.approved;

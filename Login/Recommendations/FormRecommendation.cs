@@ -12,14 +12,13 @@ namespace Login
 {
     public partial class FormRecommendation : Form
     {
-        CheckupRepository checkupRepository;
+        CheckupRepository checkupRepository = new CheckupRepository("../../Data/checkups.txt");
         Patient currentPatient;
         string choosenDoctor; 
-        public FormRecommendation(Patient patient,CheckupRepository ckpRepository)
+        public FormRecommendation(Patient patient)
         {
             InitializeComponent();
             currentPatient = patient;
-            checkupRepository = ckpRepository;
             
         }
 

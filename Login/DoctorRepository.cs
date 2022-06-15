@@ -23,6 +23,14 @@ namespace Login
             }
         }
 
+        public DoctorRepository(string fileName) {
+            LoadDoctors(fileName);
+        }
+
+        public DoctorRepository()
+        {
+        }
+
         public List<Doctor> GetSearchedDoctors(int fieldNum, string text) {
             List<Doctor> searchedDoctors = new List<Doctor>();
             foreach (Doctor doctor in doctors)
@@ -32,6 +40,12 @@ namespace Login
             
         }
 
+        public string FindDoctorType(string name) {
+            foreach (Doctor doctor in doctors)
+                if (doctor.name == name)
+                    return doctor.type;
+            return null;
+        }
         
     }
 }

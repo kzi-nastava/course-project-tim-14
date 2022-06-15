@@ -13,16 +13,17 @@ namespace Login
 {
     public partial class FormMedicalHistory : Form
     {
-        CheckupRepository checkupRepository;
+        CheckupRepository checkupRepository = new CheckupRepository("../../Data/checkups.txt");
+        DoctorRepository doctorRepository = new DoctorRepository("../../Data/doctors.txt");
         Patient currentPatient;
         string currentPatientId;
+
         DataTable checkupTable = new DataTable();
         
-        public FormMedicalHistory(Patient currentPatient,CheckupRepository checkupRepository)
+        public FormMedicalHistory(Patient currentPatient)
         {
             InitializeComponent();
             this.currentPatient = currentPatient;
-            this.checkupRepository = checkupRepository;
             currentPatientId = currentPatient.id.ToString();
             CreateCheckupTable();
             
@@ -37,12 +38,8 @@ namespace Login
 
         private void FormMedicalHistory_Load(object sender, EventArgs e)
         {
-            
-            foreach (Checkup checkup in checkupRepository.checkups)
-            {
-                if(checkup.patient.Equals(currentPatientId) && checkup.dateTime<DateTime.Now)
-                    checkupTable.Rows.Add(checkup.id, checkup.dateTime, checkup.doctor,checkup.medicalHistory,GetDoctorType(checkup.doctor));
-            }
+            foreach (Checkup checkup in checkupRepository.GetCheckups(currentPatientId))
+                    checkupTable.Rows.Add(checkup.id, checkup.dateTime, checkup.doctor,checkup.medicalHistory,doctorRepository.FindDoctorType(checkup.doctor));   
             dataGridViewCheckups.DataSource = checkupTable;
             dataGridViewCheckups.Columns["STRUKA"].Visible = false;
             LoadSortCB();
@@ -58,13 +55,8 @@ namespace Login
         {
             checkupTable.Rows.Clear();
             foreach (Checkup checkup in checkupRepository.checkups)
-            {
-                if (checkup.patient.Equals(currentPatientId) && checkup.dateTime < DateTime.Now)
-
-                    if(checkup.medicalHistory.Contains(search_tb.Text))
-
-                        checkupTable.Rows.Add(checkup.id, checkup.dateTime, checkup.doctor, checkup.medicalHistory,GetDoctorType(checkup.doctor));
-            }
+                if (checkup.Contains(currentPatientId, search_tb.Text))
+                        checkupTable.Rows.Add(checkup.id, checkup.dateTime, checkup.doctor, checkup.medicalHistory, doctorRepository.FindDoctorType(checkup.doctor));
         }
 
         private void sort_btn_Click(object sender, EventArgs e)
@@ -79,44 +71,6 @@ namespace Login
 
         void SortBy(string type) {
             checkupTable.DefaultView.Sort = type+" ASC";
-        }
-
-        string GetDoctorType(string doctor)
-        {
-            string[] lines = File.ReadAllLines("../../Data/doctors.txt");
-
-            foreach (string line in lines)
-            {
-                string[] data = line.Split('|');
-                if (data[1].Equals(doctor))
-                    return data[5];
-            }
-            return null;
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void search_lbl_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void search_tb_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void sort_cb_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridViewCheckups_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

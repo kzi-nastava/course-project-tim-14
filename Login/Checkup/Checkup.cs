@@ -26,5 +26,23 @@ namespace Login
         public bool CheckupOf(int patient) {
             return Int32.Parse(this.patient) == patient;
         }
+
+        public bool IsDone(int patient) {
+            return CheckupOf(patient) && dateTime < DateTime.Now;
+        }
+
+        public bool Contains(string patient, string text) {
+            return this.patient.Equals(patient) && dateTime < DateTime.Now && medicalHistory.Contains(text);
+        }
+
+        public void SetTime(string time)
+        {
+            string[] hoursMinutes = time.Split(':');
+            TimeSpan newTime = new TimeSpan(int.Parse(hoursMinutes[0]), int.Parse(hoursMinutes[1]), 0);
+            DateTime checkupDateTime = dateTime.Date;
+            DateTime newDateTime = checkupDateTime.Add(newTime);
+            dateTime = newDateTime;
+        }
+
     }
 }
