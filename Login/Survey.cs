@@ -31,5 +31,11 @@ namespace Login
             if (this.comment.Equals(""))
                 this.comment = "n/a";
         }
+
+        public bool IsValid()
+        {
+            return quality != -1 && rating != -1 && recommend != -1;
+              
+        }
     }
 }

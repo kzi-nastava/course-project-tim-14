@@ -24,16 +24,38 @@ namespace Login.Prescription
             }
         }
 
-        public List<Prescription> GetPrescriptions(string patient) {
+        public List<Prescription> GetActivePrescriptions(string patient)
+        {
+            List<Prescription> activePrescriptions = new List<Prescription>();
+            foreach (Prescription prescription in prescriptions)
+                if (prescription.IsActive(patient))
+                    activePrescriptions.Add(prescription);
+            return activePrescriptions;
+        }
+
+        public List<Prescription> GetTodaysPrescriptions(string patient)
+        {
             List<Prescription> selectedPrescriptions = new List<Prescription>();
-            foreach (Prescription prescription in prescriptions) 
-                if (IsValid(prescription, patient)) 
-                    selectedPrescriptions.Add(prescription);
+            foreach (Prescription prescription in GetActivePrescriptions(patient))
+            {
+                DateTime prescriptionTime = DateTime.ParseExact(prescription.time, "HH:mm", null);
+                for (int i = 0; i < prescription.num; i++)
+                {
+                    prescriptionTime = prescriptionTime.AddHours(24 / prescription.num);
+                    if (IsTime(prescriptionTime))
+                    {
+                        prescription.time = prescriptionTime.ToString();
+                        selectedPrescriptions.Add(prescription);
+                    }
+                }
+            }
             return selectedPrescriptions;
         }
 
-        public bool IsValid(Prescription prescription, string patient) {
-            return prescription.patient.Equals(patient) && prescription.fromDate < DateTime.Now && prescription.toDate > DateTime.Now;
+        public bool IsTime(DateTime prescriptionTime)
+        {
+            return prescriptionTime.AddHours(hoursBefore).TimeOfDay < DateTime.Now.TimeOfDay;
         }
-}
+
+    }
 }

@@ -24,16 +24,14 @@ namespace Login
 
         private void submit_btn_Click(object sender, EventArgs e)
         {
-            if (ISValid())
+            Survey newSurvey = new Survey(surveyRepository.GetNewId(), currentPatientId, GetSelected(quality_cb), GetSelected(hygiene_cb), GetSelected(rating_cb), GetSelected(recommend_cb), comment_tb.Text,type);
+            if (newSurvey.IsValid())
             {
-                int surveyId = surveyRepository.GetNewId();
-                Survey newSurvey = new Survey(surveyId, currentPatientId, GetRating(quality_cb), GetRating(hygiene_cb), GetRating(rating_cb), GetRating(recommend_cb), comment_tb.Text,type);
                 surveyRepository.AddSurvey(newSurvey);
                 MessageBox.Show("Hvala na odgovoru.");
             }
-            else {
+            else
                 MessageBox.Show("Doslo je do greske.");
-            }
         }
 
         private void FormSurvey_Load(object sender, EventArgs e)
@@ -49,14 +47,11 @@ namespace Login
             LoadCB(recommend_cb);
         }
 
-        public int GetRating(ComboBox comboBox) {
+       public int GetSelected(ComboBox comboBox) {
             if (comboBox.SelectedIndex != -1)
                 return Int32.Parse(comboBox.SelectedItem.ToString());
             else
                 return -1;
-        }
-        public bool ISValid() {
-            return !(GetRating(quality_cb) == -1 || GetRating(rating_cb) == -1 || GetRating(recommend_cb) == -1);
         }
         void LoadCB(ComboBox comboBox) {
             for (int i = 1; i < 6; i++)

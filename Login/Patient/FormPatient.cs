@@ -88,28 +88,12 @@ namespace Login
 
         private void notification_btn_Click(object sender, EventArgs e)
         {
-            List<Prescription.Prescription> prescriptions=prescriptionRepository.GetPrescriptions(currentPatient.id.ToString());
-            foreach (Prescription.Prescription prescription in prescriptions) {
-                DateTime prescriptionTime = DateTime.ParseExact(prescription.time, "HH:mm", null);
-                for (int i = 0; i < prescription.num; i++)
-                {
-                    prescriptionTime=prescriptionTime.AddHours(24 / prescription.num);
-                    
-                    if (IsTime(prescriptionTime))
-                    {
-                        MessageBox.Show(GetMessage(prescription,prescriptionTime));
-                    }
-                }
+            List<Prescription.Prescription> prescriptions = prescriptionRepository.GetTodaysPrescriptions(currentPatient.id.ToString());
+            foreach (Prescription.Prescription prescription in prescriptions)
+            {
+                MessageBox.Show(prescription.GetMessage());
             }
-        }
-
-        public string GetMessage(Prescription.Prescription prescription,DateTime time) {
-            return "Popij " + prescription.medicine + " u " + time.ToString("HH:mm") + " " + prescription.description+".";
-        }
-
-        public bool IsTime(DateTime prescriptionTime) {
-            return prescriptionTime.AddHours(prescriptionRepository.hoursBefore).TimeOfDay < DateTime.Now.TimeOfDay;
-        }
+        }  
 
         private void choose_hours_btn_Click(object sender, EventArgs e)
         {

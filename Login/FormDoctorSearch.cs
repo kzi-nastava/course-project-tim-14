@@ -75,30 +75,19 @@ namespace Login
         private void search_btn_Click(object sender, EventArgs e)
         {
             doctorTable.Rows.Clear();
-            foreach (Doctor doctor in doctorRepository.doctors)
-            {
-                if (GetChoosenField(doctor).Contains(search_tb.Text))
-
+            List<Doctor> doctors=doctorRepository.GetSearchedDoctors(search_cb.SelectedIndex, search_tb.Text);
+            foreach (Doctor doctor in doctors)
                     doctorTable.Rows.Add(doctor.id, doctor.name, doctor.lastName, doctor.type, doctor.rating);
-            }
+
         }
 
-        string GetChoosenField(Doctor doctor) {
-            if (search_cb.SelectedIndex == 0)
-                return doctor.name;
-            else if (search_cb.SelectedIndex == 1)
-                return doctor.lastName;
-            else if (search_cb.SelectedIndex == 2)
-                return doctor.type;
-            return null;
-        }
+        
 
         private void checkup_btn_Click(object sender, EventArgs e)
         {
             if (dataGridViewDoctors.SelectedRows.Count > 0)
             {
-                string doctor = GetSelectedDoctor();
-                FormCreateCheckup createCheckup = new FormCreateCheckup(currentPatient,checkupRepository,doctor);
+                FormCreateCheckup createCheckup = new FormCreateCheckup(currentPatient,checkupRepository,GetSelectedDoctor());
                 createCheckup.Show();
             }
         }

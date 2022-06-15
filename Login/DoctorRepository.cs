@@ -22,5 +22,16 @@ namespace Login
                 doctors.Add(doctor);
             }
         }
+
+        public List<Doctor> GetSearchedDoctors(int fieldNum, string text) {
+            List<Doctor> searchedDoctors = new List<Doctor>();
+            foreach (Doctor doctor in doctors)
+                if (doctor.GetChoosenField(fieldNum).Contains(text))
+                    searchedDoctors.Add(doctor);
+            return searchedDoctors;
+            
+        }
+
+        
     }
 }
