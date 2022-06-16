@@ -53,7 +53,7 @@ namespace Login.Secretary
             {
                 Checkup newCheckup = new Checkup(GetNewCheckupId(), GetPatientId(), GetCheckupDateTime(), GetDoctorName(),"n/a");
                 checkupRepository.checkups.Add(newCheckup);
-                checkupRepository.AddCheckupToFile(newCheckup);
+                //checkupRepository.AddCheckupToFile(newCheckup);
                 MessageBox.Show("Pregled je zakazan.");
             }
             else
