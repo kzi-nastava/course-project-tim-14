@@ -61,6 +61,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Prescriptions\CheckTime.cs" />
     <Compile Include="Checkup\Checkup.cs" />
     <Compile Include="Checkup\CheckupRepository.cs" />
     <Compile Include="Checkup\FormCreateCheckup.cs">
@@ -95,6 +96,13 @@
     </Compile>
     <Compile Include="Doctors\Doctor.cs" />
     <Compile Include="Doctors\DoctorRepository.cs" />
+    <Compile Include="Checkup\CheckupFileReader.cs" />
+    <Compile Include="Checkup\FileWriter.cs" />
+    <Compile Include="Prescriptions\GetPrescriptions.cs" />
+    <Compile Include="IConverter.cs" />
+    <Compile Include="IFileReader.cs" />
+    <Compile Include="IFileWriter.cs" />
+    <Compile Include="Prescriptions\IGetPrescriptions.cs" />
     <Compile Include="Main\Form1.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Login
 {
-    public class Checkup
+    public class Checkup:IConverter
     {
         public int id;
         public string patient;
@@ -45,6 +45,10 @@ namespace Login
             TimeSpan newTime = new TimeSpan(int.Parse(hoursMinutes[0]), int.Parse(hoursMinutes[1]), 0);
             DateTime checkupDateTime = dateTime.Date;
             DateTime newDateTime = checkupDateTime.Add(newTime);
+        }
+
+        public string FormatToString() {
+            return id.ToString() + "|" + patient + "|" + dateTime.ToString() + "|" + doctor + "|" + medicalHistory;
         }
     }
 }

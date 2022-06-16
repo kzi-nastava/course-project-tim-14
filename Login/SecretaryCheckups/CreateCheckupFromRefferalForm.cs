@@ -19,7 +19,6 @@ namespace Login.Secretary
         {
             InitializeComponent();
             checkupRepository = ckpRepository;
-            checkupRepository.LoadCheckups("../../Data/checkups.txt");
         }
 
         private void CreateCheckupFromRefferalForm_Load(object sender, EventArgs e)

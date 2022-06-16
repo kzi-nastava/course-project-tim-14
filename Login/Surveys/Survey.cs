@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Login
 {
-    public class Survey
+    public class Survey:IConverter
     {
         public int id;
         public int patientId;
@@ -36,6 +36,11 @@ namespace Login
         {
             return quality != -1 && rating != -1 && recommend != -1;
               
+        }
+
+        public string FormatToString() {
+            return  id + "|" + patientId + "|" + quality + "|" + hygiene + "|" + rating + "|" + recommend + "|" + comment + "|" + type;
+
         }
     }
 }
