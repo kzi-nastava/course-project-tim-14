@@ -14,7 +14,7 @@ namespace Login
 {
     public partial class FormSecretary : Form
     {
-        readonly CheckupRepository checkupRepository = new CheckupRepository();   
+        readonly CheckupRepository checkupRepository = new CheckupRepository("../../Data/checkups.txt");   
 
         public FormSecretary()
         {

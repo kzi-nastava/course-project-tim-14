@@ -12,22 +12,19 @@ namespace Login
 {
     public partial class FormCreateCheckup : Form
     {
-        readonly CheckupRepository checkupRepository;
+        readonly CheckupRepository checkupRepository = new CheckupRepository("../../Data/checkups.txt");
         readonly Patient currentPatient;
-        readonly DoctorRepository doctorRepository = new DoctorRepository();
+        readonly DoctorRepository doctorRepository = new DoctorRepository("../../Data/doctors.txt");
         readonly string doctor;
-        public FormCreateCheckup(Patient patient, CheckupRepository ckpRepository,string doctor)
+        public FormCreateCheckup(Patient patient,string doctor)
         {
             InitializeComponent();
             currentPatient = patient;
-            checkupRepository = ckpRepository;
             this.doctor = doctor;
-            doctorRepository.LoadDoctors("../../Data/doctors.txt");
         }
 
         private void FormCreateCheckup_Load(object sender, EventArgs e)
-        {
-           
+        {     
             LoadDoctorCB();
             SetDoctor();
             checkup_date.ValueChanged += new System.EventHandler(checkup_date_ValueChanged);
@@ -52,8 +49,6 @@ namespace Login
 
         }
 
- 
-
         void LoadDoctorCB() {
             foreach (Doctor doctor in doctorRepository.doctors)
                 doctor_cb.Items.Add(doctor.name);
@@ -61,13 +56,10 @@ namespace Login
 
         private void create_checkup_Click(object sender, EventArgs e)
         {
-            if (IsDateValid() && time_cb.SelectedIndex != -1 && doctor_cb.SelectedIndex != -1)
+            if (IsAllSelected())
             {
-                Checkup newCheckup = new Checkup(GetNewCheckupId(), currentPatient.id.ToString(), GetCheckupDateTime(), doctor_cb.SelectedItem.ToString(),"n/a");
-                checkupRepository.checkups.Add(newCheckup);
-                checkupRepository.AddCheckupToFile(newCheckup);
-                currentPatient.antitroll.AddAction("add");
-                currentPatient.AddToHistory(DateTime.Today, "add");
+                Checkup newCheckup = new Checkup(checkupRepository.GetNewCheckupId(), currentPatient.id.ToString(), GetCheckupDateTime(), doctor_cb.SelectedItem.ToString(),"n/a");
+                checkupRepository.AddCheckup(newCheckup,currentPatient);
                 MessageBox.Show("Pregled je zakazan.");
             }
             else
@@ -79,12 +71,14 @@ namespace Login
             }
         }
 
+        private bool IsAllSelected()
+        {
+            return IsDateValid() && time_cb.SelectedIndex != -1 && doctor_cb.SelectedIndex != -1;
+        }
+
         private bool IsDateValid()
         {
-            DateTime currentDate = DateTime.Now;
-            if (checkup_date.Value.Date > currentDate)
-                return true;
-            return false;
+            return checkup_date.Value.Date > DateTime.Now;
         }
 
         private void LoadTimeCB(DateTime selectedDate)
@@ -95,12 +89,6 @@ namespace Login
                 time_cb.Items.Add(time);
             }
             time_cb.Refresh();
-        }
-        
-        private int GetNewCheckupId()
-        {
-            int lastId=checkupRepository.checkups.Last().id;
-            return lastId + 1;
         }
 
         private DateTime GetCheckupDateTime()

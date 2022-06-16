@@ -13,14 +13,13 @@ namespace Login
 
     public partial class ClosestRecommendations : Form
     {
-        CheckupRepository checkupRepository;
+        CheckupRepository checkupRepository = new CheckupRepository("../../Data/checkups.txt");
         Patient currentPatient;
         List<Checkup> checkups;
-        public ClosestRecommendations(List<Checkup> chkps,Patient patient, CheckupRepository ckpRepository)
+        public ClosestRecommendations(List<Checkup> chkps,Patient patient)
         {
             InitializeComponent();
             currentPatient = patient;
-            checkupRepository = ckpRepository;
             checkups = chkps;
         }
 

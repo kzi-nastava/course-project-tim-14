@@ -27,5 +27,15 @@ namespace Login.Prescription
             this.fromDate = fromDate;
             this.toDate = toDate;
         }
+
+        public bool IsActive(string patient)
+        {
+            return this.patient.Equals(patient) && fromDate < DateTime.Now && toDate > DateTime.Now;
+        }
+
+        public string GetMessage()
+        {
+            return "Popij " + medicine + " u " + time + " " + description + ".";
+        }
     }
 }

@@ -22,8 +22,13 @@ namespace Login
             }
         }
 
+        public DeleteUpdateRequestRepository(string fileName) {
+            LoadRequests(fileName);
+        }
+
         public void AddRequestToFile(DeleteUpdateRequest request)
         {
+            requests.Add(request);
             using (StreamWriter tw = File.AppendText("deleteUpdateRequests.txt"))
             {
                 string line = request.id.ToString() + "|" + request.patient + "|" + request.checkup.ToString() + "|" + request.time + "|" + request.type + "|" + request.approved;
@@ -32,21 +37,10 @@ namespace Login
             }
         }
 
-
         public int GetNewId()
         {
             int lastId = requests.Last().id;
             return lastId + 1;
-        }
-
-        public List<DeleteUpdateRequest> MakeCopy()
-        {
-            List<DeleteUpdateRequest> copy = new List<DeleteUpdateRequest>();
-            foreach(DeleteUpdateRequest request in requests)
-            {
-                copy.Add(request);
-            }
-            return copy;
         }
     }
 }
