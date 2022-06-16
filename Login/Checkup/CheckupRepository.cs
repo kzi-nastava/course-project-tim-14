@@ -10,6 +10,7 @@ namespace Login
     public class CheckupRepository
     {
         public List<Checkup> checkups = new List<Checkup>();
+        public FileWriter fileWriter=new FileWriter("../../Data/checkups.txt");
 
         public void LoadCheckups(string fileName)
         {
@@ -100,21 +101,12 @@ namespace Login
 
         public void AddCheckup(Checkup checkup, Patient patient) {
                 checkups.Add(checkup);
-                AddCheckupToFile(checkup);
+                fileWriter.AddToFile(checkup.FormatToString());
                 patient.antitroll.AddAction("add");
                 patient.AddToHistory(DateTime.Today, "add");
         }
 
-        public void AddCheckupToFile(Checkup checkup)
-        {
-            checkups.Add(checkup);
-            using (StreamWriter tw = File.AppendText("../../Data/checkups.txt"))
-            {
-                string line = checkup.id.ToString() + "|" + checkup.patient + "|" + checkup.dateTime.ToString() + "|" + checkup.doctor + "|" + checkup.medicalHistory;
-                tw.WriteLine(line);
-                tw.Close();
-            }
-        }
+
 
         public int GetNewCheckupId()
         {

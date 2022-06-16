@@ -46,5 +46,9 @@ namespace Login
             DateTime checkupDateTime = dateTime.Date;
             DateTime newDateTime = checkupDateTime.Add(newTime);
         }
+
+        public string FormatToString() {
+            return id.ToString() + "|" + patient + "|" + dateTime.ToString() + "|" + doctor + "|" + medicalHistory;
+        }
     }
 }
