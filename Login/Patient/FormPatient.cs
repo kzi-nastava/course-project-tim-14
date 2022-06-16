@@ -18,6 +18,7 @@ namespace Login
         readonly CheckupRepository checkupRepository = new CheckupRepository("../../Data/checkups.txt");
         public DeleteUpdateRequestRepository requestRepository = new DeleteUpdateRequestRepository("../../Data/deleteUpdateRequests.txt");
         public PrescriptionRepository prescriptionRepository = new PrescriptionRepository();
+        public GetPrescriptions getPrescriptions = new GetPrescriptions();
 
         public FormPatient(string email)
         {
@@ -27,7 +28,7 @@ namespace Login
             patientRepository.LoadPatients("../../Data/patients.txt");
             patientRepository.LoadAntitrolls("../../Data/history.txt");
             prescriptionRepository.LoadPrescriptions("../../Data/prescriptions.txt");
-            prescriptionRepository.hoursBefore = 7;
+            getPrescriptions.hoursBefore = 7;
             currentPatient = patientRepository.FindPatient(email);
             if (currentPatient.IsBlockedBySystem() || currentPatient.blocked.Equals("blocked"))
             {
@@ -85,7 +86,7 @@ namespace Login
 
         private void notification_btn_Click(object sender, EventArgs e)
         {
-            List<Prescription.Prescription> prescriptions = prescriptionRepository.GetTodaysPrescriptions(currentPatient.id.ToString());
+            List<Prescription.Prescription> prescriptions = getPrescriptions.GetTodaysPrescriptions(currentPatient.id.ToString(),prescriptionRepository.prescriptions);
             foreach (Prescription.Prescription prescription in prescriptions)
             {
                 MessageBox.Show(prescription.GetMessage());
@@ -94,7 +95,7 @@ namespace Login
 
         private void choose_hours_btn_Click(object sender, EventArgs e)
         {
-            int.TryParse(hours_tb.Text, out prescriptionRepository.hoursBefore);
+            int.TryParse(hours_tb.Text, out getPrescriptions.hoursBefore);
             
         }
 

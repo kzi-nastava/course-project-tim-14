@@ -10,32 +10,26 @@ namespace Login
     public class CheckupRepository
     {
         public List<Checkup> checkups = new List<Checkup>();
-        public FileWriter fileWriter=new FileWriter("../../Data/checkups.txt");
-
-        public void LoadCheckups(string fileName)
-        {
-            string[] lines = File.ReadAllLines(fileName);
-
-            foreach (string line in lines)
-            {
-                string[] data = line.Split('|');
-                Checkup checkup = new Checkup(Int32.Parse(data[0]),data[1], Convert.ToDateTime(data[2]), data[3],data[4]);
-                checkups.Add(checkup);
-            }
-        }
+        public FileWriter fileWriter;
+        public CheckupFileReader fileReader;
+        DeleteUpdateRequestRepository requestRepository = new DeleteUpdateRequestRepository("../../Data/deleteUpdateRequests.txt");
 
         public CheckupRepository(string fileName)
         {
-            LoadCheckups(fileName);
+            fileWriter = new FileWriter(fileName);
+            fileReader = new CheckupFileReader(fileName);
+            checkups=fileReader.LoadFromFile();
         }
 
-        public List<Checkup> GetCheckups(string patientId) {
-            List<Checkup> patientCheckups = new List<Checkup>();
+        public List<string> CheckupsToString()
+        {
+            List<string> lines = new List<string>();
             foreach (Checkup checkup in checkups)
-                if (checkup.IsDone(Int32.Parse(patientId)))
-                    patientCheckups.Add(checkup);
-            return patientCheckups;
+                lines.Add(checkup.FormatToString());
+            return lines;
         }
+
+
         public List<string> LoadAvaliableCheckupTimes(DateTime date)
         {
             List<string> avaliableTimes = new List<string>() { "08:00","08:15", "08:30", "08:45","09:00","09:15","09:30","09:45","10:00","10:15", "10:30", "10:45","11:00","11:15", "11:30", "11:45", "12:00", "12:15", "12:30", "12:45", "13:00", "13:15", "13:30", "13:45", "14:00", "14:15", "14:30", "14:45", "15:00", "15:15", "15:30", "15:45" };
@@ -68,11 +62,12 @@ namespace Login
             return null;
         }
 
-        public string DeleteCheckup(Checkup selectedCheckup,DeleteUpdateRequestRepository requestRepository)
+        public string DeleteCheckup(Checkup selectedCheckup)
         {
             if (selectedCheckup.dateTime.Date > DateTime.Today.AddDays(2))
-            {              
-                RemoveCheckupFromFile(selectedCheckup);
+            {
+                checkups.Remove(selectedCheckup);
+                fileWriter.ReloadFile(CheckupsToString());
                 return "Otkazali ste pregled.";
             }
             else
@@ -84,11 +79,11 @@ namespace Login
                 
         }
 
-        public string UpdateCheckup(Checkup selectedCheckup, DeleteUpdateRequestRepository requestRepository)
+        public string UpdateCheckup(Checkup selectedCheckup)
         {
             if (selectedCheckup.dateTime.Date > DateTime.Today.AddDays(2))
             {
-                ReloadCheckupFile(selectedCheckup);
+                fileWriter.ReloadFile(CheckupsToString());
                 return "Izmenili ste pregled.";
             }
             else
@@ -114,31 +109,8 @@ namespace Login
             return lastId + 1;
         }
 
-        public void RemoveCheckupFromFile(Checkup delCheckup)
-        {
-            checkups.Remove(delCheckup);
-            TextWriter tw = new StreamWriter("../../Data/checkups.txt"); 
-            foreach (Checkup checkup in checkups)
-            {
-                if (checkup.id != delCheckup.id)
-                {
-                    string line = checkup.id.ToString() + "|" + checkup.patient + "|" + checkup.dateTime.ToString() + "|" + checkup.doctor + "|" + checkup.medicalHistory;
-                    tw.WriteLine(line);
-                }
-            }               
-            tw.Close();
-        }
 
-        public void ReloadCheckupFile(Checkup delCheckup)
-        {
-            TextWriter tw = new StreamWriter("../../Data/checkups.txt");
-            foreach (Checkup checkup in checkups)
-            {
-                string line = checkup.id.ToString() + "|" + checkup.patient + "|" + checkup.dateTime.ToString() + "|" + checkup.doctor + "|" + checkup.medicalHistory;
-                tw.WriteLine(line);     
-            }
-            tw.Close();
-        }    
+        
     }
 }
 

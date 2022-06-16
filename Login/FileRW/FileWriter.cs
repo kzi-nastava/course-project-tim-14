@@ -21,5 +21,13 @@ namespace Login
                 tw.Close();
             }
         }
+
+        public void ReloadFile(List<string> lines)
+        {
+            foreach (string line in lines)
+            {
+                AddToFile(line);
+            }
+        }
     }
 }

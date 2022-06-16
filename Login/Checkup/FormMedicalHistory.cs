@@ -38,7 +38,7 @@ namespace Login
 
         private void FormMedicalHistory_Load(object sender, EventArgs e)
         {
-            foreach (Checkup checkup in checkupRepository.GetCheckups(currentPatientId))
+            foreach (Checkup checkup in checkupRepository.GetCheckups(Int32.Parse(currentPatientId)))
                     checkupTable.Rows.Add(checkup.id, checkup.dateTime, checkup.doctor,checkup.medicalHistory,doctorRepository.FindDoctorType(checkup.doctor));   
             dataGridViewCheckups.DataSource = checkupTable;
             dataGridViewCheckups.Columns["STRUKA"].Visible = false;

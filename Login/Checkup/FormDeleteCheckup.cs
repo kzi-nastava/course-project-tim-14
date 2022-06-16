@@ -25,7 +25,7 @@ namespace Login
         private void delete_btn_Click(object sender, EventArgs e)
         {
             Checkup selectedCheckup = checkupRepository.FindCheckup(Int32.Parse(delete_cb.Text));
-            string message = checkupRepository.DeleteCheckup(selectedCheckup,requestRepository);
+            string message = checkupRepository.DeleteCheckup(selectedCheckup);
             MessageBox.Show(message);
             if(message.Equals("Otkazali ste pregled."))
                 currentPatient.AddToHistory(DateTime.Today, "delete");

@@ -33,25 +33,12 @@ namespace Login
         private void approve_btn_Click(object sender, EventArgs e)
         {
             if (checkup1_rb.Checked)
-                AddCheckup(checkups[0]);
+                checkupRepository.AddCheckup(checkups[0],currentPatient);
             if(checkup2_rb.Checked)
-                AddCheckup(checkups[1]);
+                checkupRepository.AddCheckup(checkups[1], currentPatient);
             if (checkup3_rb.Checked)
-                AddCheckup(checkups[2]);
+                checkupRepository.AddCheckup(checkups[2], currentPatient);
         }
 
-        void AddCheckup(Checkup recommendedCheckup)
-        {
-            checkupRepository.checkups.Add(recommendedCheckup);
-            checkupRepository.AddCheckupToFile(recommendedCheckup);
-            currentPatient.antitroll.AddAction("add");
-            currentPatient.AddToHistory(DateTime.Today, "add");
-            MessageBox.Show("Pregled je zakazan.");
-            if (currentPatient.IsBlockedBySystem())
-            {
-                MessageBox.Show("Blokirani ste.");
-                Application.Exit();
-            }
-        }
     }
 }

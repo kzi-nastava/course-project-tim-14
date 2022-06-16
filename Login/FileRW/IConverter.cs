@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Login
 {
-    public interface IFileWriter
+    interface IConverter
     {
-        void AddToFile(string line);
+        string FormatToString();
     }
 }

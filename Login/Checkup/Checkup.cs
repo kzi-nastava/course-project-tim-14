@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Login
 {
-    public class Checkup
+    public class Checkup:IConverter
     {
         public int id;
         public string patient;

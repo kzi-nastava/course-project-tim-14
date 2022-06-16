@@ -26,7 +26,7 @@ namespace Login
         {
             Checkup selectedCheckup = checkupRepository.FindCheckup(Int32.Parse(update_cb.Text));
             selectedCheckup.SetTime(time_cb.SelectedItem.ToString());
-            string message = checkupRepository.UpdateCheckup(selectedCheckup,requestRepository);
+            string message = checkupRepository.UpdateCheckup(selectedCheckup);
             MessageBox.Show(message);
             if(message.Equals("Izmenili ste pregled."))
                 currentPatient.AddToHistory(DateTime.Today, "update");

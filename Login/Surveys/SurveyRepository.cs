@@ -10,12 +10,15 @@ namespace Login
     public class SurveyRepository
     {
         public List<Survey> surveys = new List<Survey>();
-
+        public FileWriter fileWriter;
+        public string fileName;
         public SurveyRepository(string fileName) {
-            LoadSurveys(fileName);
+            this.fileName = fileName;
+            fileWriter = new FileWriter(fileName);
+            LoadSurveys();
         }
 
-        public void LoadSurveys(string fileName)
+        public void LoadSurveys()
         {
             string[] lines = File.ReadAllLines(fileName);
             foreach (string line in lines)
@@ -26,20 +29,17 @@ namespace Login
             }
         }
 
-        public void AddSurveyToFile(Survey survey)
+        public List<string> SurveysToString()
         {
-            using (StreamWriter tw = File.AppendText("../../Data/surveys.txt"))
-            {
-                survey.AddComment();
-                string line = survey.id + "|" + survey.patientId + "|" + survey.quality + "|" + survey.hygiene + "|" + survey.rating + "|" + survey.recommend + "|" + survey.comment+"|"+survey.type;
-                tw.WriteLine(line);
-                tw.Close();
-            }
+            List<string> lines = new List<string>();
+            foreach (Survey survey in surveys)
+                lines.Add(survey.FormatToString());
+            return lines;
         }
 
         public void AddSurvey(Survey survey) {
             surveys.Add(survey);
-            AddSurveyToFile(survey);
+            fileWriter.AddToFile(survey.FormatToString());
         }
 
         public int GetNewId() {
