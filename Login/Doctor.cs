@@ -25,5 +25,17 @@ namespace Login
             this.type = type;
             this.rating = rating;
         }
+
+        public string GetChoosenField(int fieldNum)
+        {
+            if (fieldNum == 0)
+                return name;
+            else if (fieldNum == 1)
+                return lastName;
+            else if (fieldNum == 2)
+                return type;
+            return null;
+        }
+
     }
 }

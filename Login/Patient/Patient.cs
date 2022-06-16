@@ -40,6 +40,7 @@ namespace Login
 
         public void AddToHistory(DateTime actionDate, string action)
         {
+            antitroll.AddAction("add");
             using (StreamWriter tw = File.AppendText("../../Data/history.txt"))
             {
                 string line = this.id.ToString() + "|" + actionDate.ToString() + "|" + action + "|" + blocked;

@@ -12,14 +12,13 @@ namespace Login
 {
     public partial class FormRecommendation : Form
     {
-        CheckupRepository checkupRepository;
+        CheckupRepository checkupRepository = new CheckupRepository("../../Data/checkups.txt");
         Patient currentPatient;
         string choosenDoctor; 
-        public FormRecommendation(Patient patient,CheckupRepository ckpRepository)
+        public FormRecommendation(Patient patient)
         {
             InitializeComponent();
             currentPatient = patient;
-            checkupRepository = ckpRepository;
             
         }
 
@@ -27,16 +26,12 @@ namespace Login
         {
             if (to_date_dtp.Value > DateTime.Now)
             {
-                Checkup recommendedCheckup;
-                if (doctor_rb.Checked)
-                    recommendedCheckup = RecommendByDoctor();
-                else
-                    recommendedCheckup = RecommendByTime();
+                Checkup recommendedCheckup = GetRecommended();
                 if (!(recommendedCheckup is null))
                     ApproveCheckup(recommendedCheckup);
                 else {
                     List<Checkup> closestCheckups = FindClosestThree(from_time_cb.SelectedItem.ToString(), to_time_cb.SelectedItem.ToString(),choosenDoctor);
-                    ClosestRecommendations closestRecsForm = new ClosestRecommendations(closestCheckups, currentPatient, checkupRepository);
+                    ClosestRecommendations closestRecsForm = new ClosestRecommendations(closestCheckups, currentPatient);
                     closestRecsForm.Show();
                 }
             }
@@ -44,26 +39,25 @@ namespace Login
                 MessageBox.Show("Doslo je do greske!");
             }
         }
+
+        Checkup GetRecommended() {
+            if (doctor_rb.Checked)
+                return RecommendByDoctor();
+            else
+                return RecommendByTime();
+        }
         void ApproveCheckup(Checkup recommendedCheckup) {
             string question = "Da li zelite da zakazete pregled dana " + recommendedCheckup.dateTime.ToString("MM/dd/yyyy")+ " u " + recommendedCheckup.dateTime.TimeOfDay+" kod doktora "+recommendedCheckup.doctor;
             DialogResult approveCheckup = MessageBox.Show(question,"Provera", MessageBoxButtons.YesNo);
             if (approveCheckup == DialogResult.Yes)
             {
-                AddCheckup(recommendedCheckup);
-            }
-
-        }
-
-        void AddCheckup(Checkup recommendedCheckup) {
-            checkupRepository.checkups.Add(recommendedCheckup);
-            checkupRepository.AddCheckupToFile(recommendedCheckup);
-            currentPatient.antitroll.AddAction("add");
-            currentPatient.AddToHistory(DateTime.Today, "add");
-            MessageBox.Show("Pregled je zakazan.");
-            if (currentPatient.IsBlockedBySystem())
-            {
-                MessageBox.Show("Blokirani ste.");
-                Application.Exit();
+                checkupRepository.AddCheckup(recommendedCheckup,currentPatient);
+                MessageBox.Show("Pregled je zakazan.");
+                if (currentPatient.IsBlockedBySystem())
+                {
+                    MessageBox.Show("Blokirani ste.");
+                    Application.Exit();
+                }
             }
         }
 
@@ -71,7 +65,6 @@ namespace Login
         {
             LoadDoctors();
             LoadStartTime();
-            
             from_time_cb.SelectedIndexChanged += new System.EventHandler(from_time_cb_SelectedIndexChanged);
         }
 
@@ -79,7 +72,6 @@ namespace Login
         {
             choosenDoctor = doctor_cb.SelectedItem.ToString();
             LoadEndTime();
-
         }
 
         void LoadStartTime() {
@@ -105,12 +97,30 @@ namespace Login
             doctor_cb.Items.Add("Doktor3");
         }
 
-        Checkup RecommendByDoctor() {
-             DateTime choosenDate = to_date_dtp.Value;
-            while (choosenDate > DateTime.Now) {
+        Checkup NewCheckup(string avaliableTime, DateTime date, string doctor)
+        {
+            DateTime newDate = GetCheckupDateTime(avaliableTime, date);
+            string patientId = currentPatient.id.ToString();
+            Checkup checkup = new Checkup(GetNewCheckupId(), patientId, newDate, doctor, "n\a");
+            return checkup;
+        }
+
+        DateTime GetCheckupDateTime(string avaliableTime, DateTime date)
+        {
+            string[] hoursMinutes = avaliableTime.Split(':');
+            TimeSpan newTime = new TimeSpan(int.Parse(hoursMinutes[0]), int.Parse(hoursMinutes[1]), 0);
+            DateTime checkupDateTime = date.Date;
+            DateTime newDateTime = checkupDateTime.Add(newTime);
+            return newDateTime;
+        }
+        Checkup RecommendByDoctor()
+        {
+            DateTime choosenDate = to_date_dtp.Value;
+            while (choosenDate > DateTime.Now)
+            {
                 string avaliableTime = GetAvaliableTime(choosenDoctor, choosenDate);
                 if (!(avaliableTime is null))
-                    return NewCheckup(avaliableTime, choosenDate,choosenDoctor);
+                    return NewCheckup(avaliableTime, choosenDate, choosenDoctor);
                 choosenDate.AddDays(1);
             }
             return null;
@@ -186,22 +196,8 @@ namespace Login
             
         }
 
-        Checkup NewCheckup(string avaliableTime, DateTime date,string doctor) {
-            DateTime newDate=GetCheckupDateTime(avaliableTime, date);
-            string patientId = currentPatient.id.ToString();
-            Checkup checkup = new Checkup(GetNewCheckupId(),patientId,newDate,doctor,"n\a");
-            return checkup;
-        }
-
-        DateTime GetCheckupDateTime(string avaliableTime, DateTime date) {
-            string[] hoursMinutes = avaliableTime.Split(':');
-            TimeSpan newTime = new TimeSpan(int.Parse(hoursMinutes[0]), int.Parse(hoursMinutes[1]), 0);
-            DateTime checkupDateTime = date.Date;
-            DateTime newDateTime = checkupDateTime.Add(newTime);
-            return newDateTime;
-        }
-
-        string GetAvaliableTime(string doctor, DateTime date) {
+        string GetAvaliableTime(string doctor, DateTime date)
+        {
             List<string> allTimes = new List<string>() { "08:00", "08:15", "08:30", "08:45", "09:00", "09:15", "09:30", "09:45", "10:00", "10:15", "10:30", "10:45", "11:00", "11:15", "11:30", "11:45", "12:00", "12:15", "12:30", "12:45", "13:00", "13:15", "13:30", "13:45", "14:00", "14:15", "14:30", "14:45", "15:00", "15:15", "15:30", "15:45" };
 
             foreach (Checkup checkup in checkupRepository.checkups)

@@ -12,22 +12,21 @@ namespace Login
 {
     public partial class FormUpdateCheckup : Form
     {
-        readonly CheckupRepository checkupRepository;
+        readonly CheckupRepository checkupRepository = new CheckupRepository("../../Data/checkups.txt");
         readonly Patient currentPatient;
-        readonly DeleteUpdateRequestRepository requestRepository;
+        readonly DeleteUpdateRequestRepository requestRepository = new DeleteUpdateRequestRepository("../../Data/deleteUpdateRequests.txt");
 
-        public FormUpdateCheckup(Patient patient, CheckupRepository ckpRepository, DeleteUpdateRequestRepository rqstRepository)
+        public FormUpdateCheckup(Patient patient)
         {
             InitializeComponent();
             currentPatient = patient;
-            checkupRepository = ckpRepository;
-            requestRepository = rqstRepository;
         }
-
 
         private void update_btn_Click(object sender, EventArgs e)
         {
-            string message = checkupRepository.UpdateCheckup(update_cb.Text, time_cb.SelectedItem.ToString(),currentPatient,requestRepository);
+            Checkup selectedCheckup = checkupRepository.FindCheckup(Int32.Parse(update_cb.Text));
+            selectedCheckup.SetTime(time_cb.SelectedItem.ToString());
+            string message = checkupRepository.UpdateCheckup(selectedCheckup,requestRepository);
             MessageBox.Show(message);
             if(message.Equals("Izmenili ste pregled."))
                 currentPatient.AddToHistory(DateTime.Today, "update");
@@ -40,11 +39,8 @@ namespace Login
 
         private void FormUpdateCheckup_Load(object sender, EventArgs e)
         {
-            foreach (Checkup checkup in checkupRepository.checkups)
-            {
-                if (int.Parse(checkup.patient) == currentPatient.id)
+            foreach (Checkup checkup in checkupRepository.GetCheckups(currentPatient.id))
                     update_cb.Items.Add(checkup.id);
-            }
             update_cb.SelectedIndexChanged += new System.EventHandler(update_cb_SelectedIndexChanged);
         }
 
@@ -58,9 +54,7 @@ namespace Login
         {
             List<string> avaliableTimes=checkupRepository.LoadAvaliableCheckupTimes(checkup.dateTime,checkup.doctor);
             foreach(string time in avaliableTimes)
-            {
                 time_cb.Items.Add(time);
-            }
         }
     }
 }

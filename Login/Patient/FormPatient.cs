@@ -15,8 +15,8 @@ namespace Login
     public partial class FormPatient : Form
     {
         readonly Patient currentPatient;
-        readonly CheckupRepository checkupRepository = new CheckupRepository();
-        public DeleteUpdateRequestRepository requestRepository = new DeleteUpdateRequestRepository();
+        readonly CheckupRepository checkupRepository = new CheckupRepository("../../Data/checkups.txt");
+        public DeleteUpdateRequestRepository requestRepository = new DeleteUpdateRequestRepository("../../Data/deleteUpdateRequests.txt");
         public PrescriptionRepository prescriptionRepository = new PrescriptionRepository();
 
         public FormPatient(string email)
@@ -26,9 +26,6 @@ namespace Login
             PatientRepository patientRepository = new PatientRepository();
             patientRepository.LoadPatients("../../Data/patients.txt");
             patientRepository.LoadAntitrolls("../../Data/history.txt");
-            patientRepository.LoadAntitrolls("../../Data/history.txt");
-            checkupRepository.LoadCheckups("../../Data/checkups.txt");
-            requestRepository.LoadRequests("../../Data/deleteUpdateRequests.txt");
             prescriptionRepository.LoadPrescriptions("../../Data/prescriptions.txt");
             prescriptionRepository.hoursBefore = 7;
             currentPatient = patientRepository.FindPatient(email);
@@ -46,22 +43,22 @@ namespace Login
                 {
                     case 0:
                         this.Hide();
-                        FormReadCheckups checkupRead = new FormReadCheckups(currentPatient.id, checkupRepository);
+                        FormReadCheckups checkupRead = new FormReadCheckups(currentPatient.id);
                         checkupRead.Show();
                         break;
                     case 1:
                         this.Hide();
-                        FormCreateCheckup checkupCreate = new FormCreateCheckup(currentPatient, checkupRepository,"");
+                        FormCreateCheckup checkupCreate = new FormCreateCheckup(currentPatient,"");
                         checkupCreate.Show();
                         break;
                     case 2:
                         this.Hide();
-                        FormDeleteCheckup checkupDelete = new FormDeleteCheckup(currentPatient, checkupRepository, requestRepository);
+                        FormDeleteCheckup checkupDelete = new FormDeleteCheckup(currentPatient);
                         checkupDelete.Show();
                         break;
                     case 3:
                         this.Hide();
-                        FormUpdateCheckup checkupUpdate = new FormUpdateCheckup(currentPatient, checkupRepository, requestRepository);
+                        FormUpdateCheckup checkupUpdate = new FormUpdateCheckup(currentPatient);
                         checkupUpdate.Show();
                         break;
                 }
@@ -69,47 +66,31 @@ namespace Login
 
         private void recommend_btn_Click(object sender, EventArgs e)
         {
-            FormRecommendation formRecommendation = new FormRecommendation(currentPatient,checkupRepository);
+            FormRecommendation formRecommendation = new FormRecommendation(currentPatient);
             formRecommendation.Show();
         }
 
 
         private void medical_history_btn_Click_1(object sender, EventArgs e)
         {
-            FormMedicalHistory formMedicalHistory = new FormMedicalHistory(currentPatient, checkupRepository);
+            FormMedicalHistory formMedicalHistory = new FormMedicalHistory(currentPatient);
             formMedicalHistory.Show();
         }
 
         private void doctor_search_btn_Click(object sender, EventArgs e)
         {
-            FormDoctorSearch formDoctorSearch = new FormDoctorSearch(currentPatient, checkupRepository);
+            FormDoctorSearch formDoctorSearch = new FormDoctorSearch(currentPatient);
             formDoctorSearch.Show();
         }
 
         private void notification_btn_Click(object sender, EventArgs e)
         {
-            List<Prescription.Prescription> prescriptions=prescriptionRepository.GetPrescriptions(currentPatient.id.ToString());
-            foreach (Prescription.Prescription prescription in prescriptions) {
-                DateTime prescriptionTime = DateTime.ParseExact(prescription.time, "HH:mm", null);
-                for (int i = 0; i < prescription.num; i++)
-                {
-                    prescriptionTime=prescriptionTime.AddHours(24 / prescription.num);
-                    
-                    if (IsTime(prescriptionTime))
-                    {
-                        MessageBox.Show(GetMessage(prescription,prescriptionTime));
-                    }
-                }
+            List<Prescription.Prescription> prescriptions = prescriptionRepository.GetTodaysPrescriptions(currentPatient.id.ToString());
+            foreach (Prescription.Prescription prescription in prescriptions)
+            {
+                MessageBox.Show(prescription.GetMessage());
             }
-        }
-
-        public string GetMessage(Prescription.Prescription prescription,DateTime time) {
-            return "Popij " + prescription.medicine + " u " + time.ToString("HH:mm") + " " + prescription.description+".";
-        }
-
-        public bool IsTime(DateTime prescriptionTime) {
-            return prescriptionTime.AddHours(prescriptionRepository.hoursBefore).TimeOfDay < DateTime.Now.TimeOfDay;
-        }
+        }  
 
         private void choose_hours_btn_Click(object sender, EventArgs e)
         {

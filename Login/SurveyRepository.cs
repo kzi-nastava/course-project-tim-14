@@ -14,15 +14,15 @@ namespace Login
         public SurveyRepository(string fileName) {
             LoadSurveys(fileName);
         }
+
         public void LoadSurveys(string fileName)
         {
             string[] lines = File.ReadAllLines(fileName);
-
             foreach (string line in lines)
             {
                 string[] data = line.Split('|');
                 Survey survey = new Survey(Int32.Parse(data[0]), Int32.Parse(data[1]), Int32.Parse(data[2]), Int32.Parse(data[3]), Int32.Parse(data[4]), Int32.Parse(data[5]), data[6],data[7]);
-                surveys.Add(survey);
+                surveys.Add(survey);     
             }
         }
 

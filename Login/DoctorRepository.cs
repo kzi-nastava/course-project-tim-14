@@ -22,5 +22,30 @@ namespace Login
                 doctors.Add(doctor);
             }
         }
+
+        public DoctorRepository(string fileName) {
+            LoadDoctors(fileName);
+        }
+
+        public DoctorRepository()
+        {
+        }
+
+        public List<Doctor> GetSearchedDoctors(int fieldNum, string text) {
+            List<Doctor> searchedDoctors = new List<Doctor>();
+            foreach (Doctor doctor in doctors)
+                if (doctor.GetChoosenField(fieldNum).Contains(text))
+                    searchedDoctors.Add(doctor);
+            return searchedDoctors;
+            
+        }
+
+        public string FindDoctorType(string name) {
+            foreach (Doctor doctor in doctors)
+                if (doctor.name == name)
+                    return doctor.type;
+            return null;
+        }
+        
     }
 }

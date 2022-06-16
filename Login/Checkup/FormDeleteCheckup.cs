@@ -12,21 +12,20 @@ namespace Login
 {
     public partial class FormDeleteCheckup : Form
     {
-        readonly CheckupRepository checkupRepository;
+        readonly CheckupRepository checkupRepository=new CheckupRepository("../../Data/checkups.txt");
         readonly Patient currentPatient;
-        readonly DeleteUpdateRequestRepository requestRepository;
+        readonly DeleteUpdateRequestRepository requestRepository = new DeleteUpdateRequestRepository("../../Data/deleteUpdateRequests.txt");
 
-        public FormDeleteCheckup(Patient patient, CheckupRepository ckpRepository, DeleteUpdateRequestRepository rqstRepository)
+        public FormDeleteCheckup(Patient patient)
         {
             InitializeComponent();
             currentPatient = patient;
-            checkupRepository = ckpRepository;
-            requestRepository = rqstRepository;
         }
 
         private void delete_btn_Click(object sender, EventArgs e)
         {
-            string message = checkupRepository.DeleteCheckup(delete_cb.SelectedItem.ToString(),currentPatient,requestRepository);
+            Checkup selectedCheckup = checkupRepository.FindCheckup(Int32.Parse(delete_cb.Text));
+            string message = checkupRepository.DeleteCheckup(selectedCheckup,requestRepository);
             MessageBox.Show(message);
             if(message.Equals("Otkazali ste pregled."))
                 currentPatient.AddToHistory(DateTime.Today, "delete");
