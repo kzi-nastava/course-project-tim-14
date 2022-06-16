@@ -39,6 +39,8 @@ namespace Login
             this.newMedicineBtn = new System.Windows.Forms.Button();
             this.ViewIngredientsBtn = new System.Windows.Forms.Button();
             this.rejectedBtn = new System.Windows.Forms.Button();
+            this.surveyResultsBtn = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -140,11 +142,33 @@ namespace Login
             this.rejectedBtn.UseVisualStyleBackColor = true;
             this.rejectedBtn.Click += new System.EventHandler(this.rejectedBtn_Click);
             // 
+            // surveyResultsBtn
+            // 
+            this.surveyResultsBtn.Location = new System.Drawing.Point(467, 290);
+            this.surveyResultsBtn.Name = "surveyResultsBtn";
+            this.surveyResultsBtn.Size = new System.Drawing.Size(142, 127);
+            this.surveyResultsBtn.TabIndex = 11;
+            this.surveyResultsBtn.Text = "Hospital Survey Results";
+            this.surveyResultsBtn.UseVisualStyleBackColor = true;
+            this.surveyResultsBtn.Click += new System.EventHandler(this.surveyResultsBtn_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(632, 290);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(142, 127);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Doctor Survey Results";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FormAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.surveyResultsBtn);
             this.Controls.Add(this.rejectedBtn);
             this.Controls.Add(this.ViewIngredientsBtn);
             this.Controls.Add(this.newMedicineBtn);
@@ -175,5 +199,7 @@ namespace Login
         private System.Windows.Forms.Button newMedicineBtn;
         private System.Windows.Forms.Button ViewIngredientsBtn;
         private System.Windows.Forms.Button rejectedBtn;
+        private System.Windows.Forms.Button surveyResultsBtn;
+        private System.Windows.Forms.Button button1;
     }
 }

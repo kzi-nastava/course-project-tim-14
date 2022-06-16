@@ -1,5 +1,6 @@
 ﻿using Login.ManagerRepository;
 using Login.ManagerRepository.GUI;
+using Login.Surveys;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,6 +21,8 @@ namespace Login
         public MovingRequestsRepository movingRequestsRepository;
         public MedicineRepository medicineRepository;
         public IngredientRepository ingredientRepository;
+        public SurveyRepository surveyRepository;
+        public DoctorRepository doctorRepository;
 
         public FormAdmin()
         {
@@ -68,12 +71,13 @@ namespace Login
             roomsRepository.LoadRoomRepository();
             equipmentRepository = new EquipmentRepository();
             equipmentRepository.LoadEquipmentRepository();
-            //movingRequestsRepository = new MovingRequestsRepository(equipmentRepository, roomsRepository);
-            //movingRequestsRepository.LoadMovingRequestsRepository();
             ingredientRepository = new IngredientRepository();
             ingredientRepository.LoadRepository();
             medicineRepository = new MedicineRepository();
             medicineRepository.LoadRepository();
+            surveyRepository = new SurveyRepository("../../Data/surveys.txt");
+            doctorRepository = new DoctorRepository("../../Data/doctors.txt");
+
         }
 
         private void ViewIngredientsBtn_Click(object sender, EventArgs e)
@@ -92,6 +96,18 @@ namespace Login
         {
             RejectedMedicineForm rejectedMedicineForm = new RejectedMedicineForm(medicineRepository, ingredientRepository);
             rejectedMedicineForm.Show();
+        }
+
+        private void surveyResultsBtn_Click(object sender, EventArgs e)
+        {
+            HospitalSurveyResultsForm resultsForm = new HospitalSurveyResultsForm(surveyRepository);
+            resultsForm.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DoctorSurveyResultsForm resultsForm = new DoctorSurveyResultsForm(surveyRepository, doctorRepository.doctors);
+            resultsForm.Show();
         }
     }
 }

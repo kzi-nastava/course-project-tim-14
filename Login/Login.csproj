@@ -125,48 +125,54 @@
     <Compile Include="FormSecretary.Designer.cs">
       <DependentUpon>FormSecretary.cs</DependentUpon>
     </Compile>
+    <Compile Include="Surveys\DoctorSurveyResultsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Surveys\DoctorSurveyResultsForm.Designer.cs">
+      <DependentUpon>DoctorSurveyResultsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Surveys\FormSurvey.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Surveys\FormSurvey.Designer.cs">
       <DependentUpon>FormSurvey.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagerRepository\Equipment.cs" />
-    <Compile Include="ManagerRepository\EquipmentRepository.cs" />
-    <Compile Include="ManagerRepository\GUI\DeleteIngredientForm.cs">
+    <Compile Include="Equipment\Equipment.cs" />
+    <Compile Include="Equipment\EquipmentRepository.cs" />
+    <Compile Include="Ingredients\DeleteIngredientForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManagerRepository\GUI\DeleteIngredientForm.Designer.cs">
+    <Compile Include="Ingredients\DeleteIngredientForm.Designer.cs">
       <DependentUpon>DeleteIngredientForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagerRepository\GUI\DeleteRoomForm.cs">
+    <Compile Include="Room\DeleteRoomForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManagerRepository\GUI\DeleteRoomForm.Designer.cs">
+    <Compile Include="Room\DeleteRoomForm.Designer.cs">
       <DependentUpon>DeleteRoomForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagerRepository\GUI\EditIngredient.cs">
+    <Compile Include="Ingredients\EditIngredient.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManagerRepository\GUI\EditIngredient.Designer.cs">
+    <Compile Include="Ingredients\EditIngredient.Designer.cs">
       <DependentUpon>EditIngredient.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagerRepository\GUI\EditMedicineForm.cs">
+    <Compile Include="Medicine\EditMedicineForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManagerRepository\GUI\EditMedicineForm.Designer.cs">
+    <Compile Include="Medicine\EditMedicineForm.Designer.cs">
       <DependentUpon>EditMedicineForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagerRepository\GUI\IngredientsForm.cs">
+    <Compile Include="Ingredients\IngredientsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManagerRepository\GUI\IngredientsForm.Designer.cs">
+    <Compile Include="Ingredients\IngredientsForm.Designer.cs">
       <DependentUpon>IngredientsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagerRepository\GUI\RejectedMedicineForm.cs">
+    <Compile Include="Medicine\RejectedMedicineForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManagerRepository\GUI\RejectedMedicineForm.Designer.cs">
+    <Compile Include="Medicine\RejectedMedicineForm.Designer.cs">
       <DependentUpon>RejectedMedicineForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ManagerRepository\GUI\MovingRequestForm.cs">
@@ -175,51 +181,51 @@
     <Compile Include="ManagerRepository\GUI\MovingRequestForm.Designer.cs">
       <DependentUpon>MovingRequestForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagerRepository\GUI\NewIngredientForm.cs">
+    <Compile Include="Ingredients\NewIngredientForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManagerRepository\GUI\NewIngredientForm.Designer.cs">
+    <Compile Include="Ingredients\NewIngredientForm.Designer.cs">
       <DependentUpon>NewIngredientForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagerRepository\GUI\NewMedicineForm.cs">
+    <Compile Include="Medicine\NewMedicineForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManagerRepository\GUI\NewMedicineForm.Designer.cs">
+    <Compile Include="Medicine\NewMedicineForm.Designer.cs">
       <DependentUpon>NewMedicineForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagerRepository\GUI\NewRoomForm.cs">
+    <Compile Include="Room\NewRoomForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManagerRepository\GUI\NewRoomForm.Designer.cs">
+    <Compile Include="Room\NewRoomForm.Designer.cs">
       <DependentUpon>NewRoomForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagerRepository\GUI\ShowRoomsForm.cs">
+    <Compile Include="Room\ShowRoomsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManagerRepository\GUI\ShowRoomsForm.Designer.cs">
+    <Compile Include="Room\ShowRoomsForm.Designer.cs">
       <DependentUpon>ShowRoomsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagerRepository\GUI\UpdateRoomForm.cs">
+    <Compile Include="Room\UpdateRoomForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManagerRepository\GUI\UpdateRoomForm.Designer.cs">
+    <Compile Include="Room\UpdateRoomForm.Designer.cs">
       <DependentUpon>UpdateRoomForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagerRepository\GUI\ViewEquipmentForm.cs">
+    <Compile Include="Equipment\ViewEquipmentForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ManagerRepository\GUI\ViewEquipmentForm.Designer.cs">
+    <Compile Include="Equipment\ViewEquipmentForm.Designer.cs">
       <DependentUpon>ViewEquipmentForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ManagerRepository\Ingredient.cs" />
-    <Compile Include="ManagerRepository\IngredientRepository.cs" />
-    <Compile Include="ManagerRepository\Medicine.cs" />
-    <Compile Include="ManagerRepository\MedicineRepository.cs" />
+    <Compile Include="Ingredients\Ingredient.cs" />
+    <Compile Include="Ingredients\IngredientRepository.cs" />
+    <Compile Include="Medicine\Medicine.cs" />
+    <Compile Include="Medicine\MedicineRepository.cs" />
     <Compile Include="ManagerRepository\MovingRequest.cs" />
     <Compile Include="ManagerRepository\MovingRequestsRepository.cs" />
-    <Compile Include="ManagerRepository\QuantityCounter.cs" />
-    <Compile Include="ManagerRepository\Room.cs" />
-    <Compile Include="ManagerRepository\RoomsRepository.cs" />
+    <Compile Include="Equipment\QuantityCounter.cs" />
+    <Compile Include="Room\Room.cs" />
+    <Compile Include="Room\RoomsRepository.cs" />
     <Compile Include="Patient\Antitroll.cs" />
     <Compile Include="Patient\FormPatient.cs">
       <SubType>Form</SubType>
@@ -315,8 +321,15 @@
     <Compile Include="Secretary\SingleAccountForm.Designer.cs">
       <DependentUpon>SingleAccountForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Surveys\ScoreCalculator.cs" />
     <Compile Include="Surveys\Survey.cs" />
     <Compile Include="Surveys\SurveyRepository.cs" />
+    <Compile Include="Surveys\HospitalSurveyResultsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Surveys\HospitalSurveyResultsForm.Designer.cs">
+      <DependentUpon>HospitalSurveyResultsForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Checkup\FormCreateCheckup.resx">
       <DependentUpon>FormCreateCheckup.cs</DependentUpon>
     </EmbeddedResource>
@@ -347,46 +360,49 @@
     <EmbeddedResource Include="FormSecretary.resx">
       <DependentUpon>FormSecretary.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Surveys\DoctorSurveyResultsForm.resx">
+      <DependentUpon>DoctorSurveyResultsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Surveys\FormSurvey.resx">
       <DependentUpon>FormSurvey.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagerRepository\GUI\DeleteIngredientForm.resx">
+    <EmbeddedResource Include="Ingredients\DeleteIngredientForm.resx">
       <DependentUpon>DeleteIngredientForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagerRepository\GUI\DeleteRoomForm.resx">
+    <EmbeddedResource Include="Room\DeleteRoomForm.resx">
       <DependentUpon>DeleteRoomForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagerRepository\GUI\EditIngredient.resx">
+    <EmbeddedResource Include="Ingredients\EditIngredient.resx">
       <DependentUpon>EditIngredient.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagerRepository\GUI\EditMedicineForm.resx">
+    <EmbeddedResource Include="Medicine\EditMedicineForm.resx">
       <DependentUpon>EditMedicineForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagerRepository\GUI\IngredientsForm.resx">
+    <EmbeddedResource Include="Ingredients\IngredientsForm.resx">
       <DependentUpon>IngredientsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagerRepository\GUI\RejectedMedicineForm.resx">
+    <EmbeddedResource Include="Medicine\RejectedMedicineForm.resx">
       <DependentUpon>RejectedMedicineForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ManagerRepository\GUI\MovingRequestForm.resx">
       <DependentUpon>MovingRequestForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagerRepository\GUI\NewIngredientForm.resx">
+    <EmbeddedResource Include="Ingredients\NewIngredientForm.resx">
       <DependentUpon>NewIngredientForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagerRepository\GUI\NewMedicineForm.resx">
+    <EmbeddedResource Include="Medicine\NewMedicineForm.resx">
       <DependentUpon>NewMedicineForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagerRepository\GUI\NewRoomForm.resx">
+    <EmbeddedResource Include="Room\NewRoomForm.resx">
       <DependentUpon>NewRoomForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagerRepository\GUI\ShowRoomsForm.resx">
+    <EmbeddedResource Include="Room\ShowRoomsForm.resx">
       <DependentUpon>ShowRoomsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagerRepository\GUI\UpdateRoomForm.resx">
+    <EmbeddedResource Include="Room\UpdateRoomForm.resx">
       <DependentUpon>UpdateRoomForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ManagerRepository\GUI\ViewEquipmentForm.resx">
+    <EmbeddedResource Include="Equipment\ViewEquipmentForm.resx">
       <DependentUpon>ViewEquipmentForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Patient\FormPatient.resx">
@@ -440,6 +456,9 @@
     <EmbeddedResource Include="Secretary\SingleAccountForm.resx">
       <DependentUpon>SingleAccountForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Surveys\HospitalSurveyResultsForm.resx">
+      <DependentUpon>HospitalSurveyResultsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -483,5 +502,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
