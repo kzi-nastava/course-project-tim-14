@@ -128,5 +128,11 @@ namespace Login
             arrLine[lineToEdit - 1] = newText;
             File.WriteAllLines(fileName, arrLine);
         }
+
+        private void freeDayRequest_btn_Click(object sender, EventArgs e)
+        {
+            var createFreeDayRequestForm = new FreeDayRequestForm();
+            createFreeDayRequestForm.Show();
+        }
     }
 }
