@@ -98,6 +98,13 @@ namespace Login
             }
         }
 
+        public void AddCheckup(Checkup checkup, Patient patient) {
+                checkups.Add(checkup);
+                AddCheckupToFile(checkup);
+                patient.antitroll.AddAction("add");
+                patient.AddToHistory(DateTime.Today, "add");
+        }
+
         public void AddCheckupToFile(Checkup checkup)
         {
             checkups.Add(checkup);
@@ -139,7 +146,7 @@ namespace Login
                 tw.WriteLine(line);     
             }
             tw.Close();
-        }
+        }    
     }
 }
 

@@ -37,21 +37,10 @@ namespace Login
             }
         }
 
-
         public int GetNewId()
         {
             int lastId = requests.Last().id;
             return lastId + 1;
-        }
-
-        public List<DeleteUpdateRequest> MakeCopy()
-        {
-            List<DeleteUpdateRequest> copy = new List<DeleteUpdateRequest>();
-            foreach(DeleteUpdateRequest request in requests)
-            {
-                copy.Add(request);
-            }
-            return copy;
         }
     }
 }

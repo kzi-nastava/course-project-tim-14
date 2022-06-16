@@ -35,14 +35,16 @@ namespace Login
             return this.patient.Equals(patient) && dateTime < DateTime.Now && medicalHistory.Contains(text);
         }
 
-        public void SetTime(string time)
+        public bool AlreadyExists(string doctor,DateTime dateTime) {
+            return this.dateTime.Date.Equals(dateTime) && this.doctor.Equals(doctor);
+        }
+
+        public void SetTime(string avaliableTime)
         {
-            string[] hoursMinutes = time.Split(':');
+            string[] hoursMinutes = avaliableTime.Split(':');
             TimeSpan newTime = new TimeSpan(int.Parse(hoursMinutes[0]), int.Parse(hoursMinutes[1]), 0);
             DateTime checkupDateTime = dateTime.Date;
             DateTime newDateTime = checkupDateTime.Add(newTime);
-            dateTime = newDateTime;
         }
-
     }
 }

@@ -59,8 +59,7 @@ namespace Login
             if (IsAllSelected())
             {
                 Checkup newCheckup = new Checkup(checkupRepository.GetNewCheckupId(), currentPatient.id.ToString(), GetCheckupDateTime(), doctor_cb.SelectedItem.ToString(),"n/a");
-                checkupRepository.AddCheckupToFile(newCheckup);
-                currentPatient.AddToHistory(DateTime.Today, "add");
+                checkupRepository.AddCheckup(newCheckup,currentPatient);
                 MessageBox.Show("Pregled je zakazan.");
             }
             else
