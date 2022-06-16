@@ -132,7 +132,7 @@ namespace Login.Surveys
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(155, 20);
             this.label5.TabIndex = 29;
-            this.label5.Text = "Patients\' satisfaction";
+            this.label5.Text = "Patient\'s satisfaction";
             // 
             // label4
             // 
