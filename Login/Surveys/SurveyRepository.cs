@@ -46,6 +46,19 @@ namespace Login
                 int lastId = surveys.Last().id;
                 return lastId + 1;
         }
+
+        public List<Survey> HospitalSurveys()
+        {
+            List<Survey> hospitalSurveys= new List<Survey>();
+            foreach(Survey survey in surveys)
+            {
+                if (survey.type == "bolnica")
+                {
+                    hospitalSurveys.Add(survey);
+                }
+            }
+            return hospitalSurveys;
+        }
     }
 
 }
