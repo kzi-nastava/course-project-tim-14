@@ -1,6 +1,6 @@
 1|Gaze|54
 2|Kopce|121
 3|Hanzaplast|0
-4|Inekcije|0
+4|Inekcije|20
 5|Papir|12
-6|Olovke|0
+6|Olovke|25
