@@ -32,5 +32,9 @@ namespace Login.ManagerRepository.GUI
             roomsGridView.DataSource = roomTable;
         }
 
+        private void roomsGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
